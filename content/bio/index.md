@@ -99,7 +99,7 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
 
 <dl class="cv-list">
   <dt>Langues</dt>
-  <dd>Français (excellent), anglais (excellent), norvégien (lu)</dd>
+  <dd>Français (excellent), anglais (excellent)</dd>
   <dt>Informatique et logiciels</dt>
   <dd>Pack Office, R, NVivo, ArcGIS Pro, Affinity Designer</dd>
   <dt>Aptitudes</dt>
