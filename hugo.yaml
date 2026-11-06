@@ -79,6 +79,9 @@ menu:
     - name: Projets en cours
       pageRef: /projets
       weight: 40
+    - name: Médias
+      pageRef: /medias
+      weight: 45
     - name: Co-auteurs
       pageRef: /authors
       weight: 50
