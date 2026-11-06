@@ -20,7 +20,7 @@ Même principe dans `content/talk/`.
 
 ## À vérifier absolument
 
-- **Page Co-auteurs** : la liste est générée automatiquement à partir de vos publications. Les liens (`data/coauthors.json`) ont été trouvés par recherche web et **doivent être relus** : seules 8 personnes ont un lien ; les autres apparaissent sans lien. Ajoutez ou corrigez une ligne `"Nom": {"url": "https://…"}` au besoin.
+- **Page Co-auteurs** : la liste est générée automatiquement à partir de vos publications. Les liens (`data/coauthors.json`) ont été trouvés par recherche web et **doivent être relus** : seules 7 personnes ont un lien ; les autres apparaissent sans lien. Ajoutez ou corrigez une ligne `"Nom": {"url": "https://…"}` au besoin.
 - **Bio** : le paragraphe narratif est un brouillon rédigé à partir de votre CV (voir le commentaire HTML dans le fichier).
 - **Coquilles repérées dans le CV** (signalées en commentaires dans les fichiers concernés) : URL du DOI de l'Annuaire, DOI via proxy ulaval, Champs de Mars 2017/2019, titre du mémoire, titre provisoire du numéro spécial.
 - Aucun PDF n'est déposé : ajoutez vos fichiers dans `static/files/` et référencez-les dans la publication.

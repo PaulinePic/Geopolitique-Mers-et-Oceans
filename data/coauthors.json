@@ -1,10 +1,23 @@
 {
-  "Frédéric Lasserre": {"url": "https://www.ulaval.ca/la-recherche/repertoire-corps-professoral/frederic-lasserre"},
-  "Jean-Frédéric Morin": {"url": "https://www.chaire-epi.ulaval.ca/fr/jean-frederic-morin"},
-  "Mathieu Landriault": {"url": "https://www.naadsn.ca/people/dr-mathieu-landriault/"},
-  "Klaus Dodds": {"url": "https://wilsoncenter.org/person/klaus-dodds-0"},
-  "Florian Vidal": {"url": "https://www.ifri.org/fr/florian-vidal"},
-  "Karen Everett": {"url": "https://www.naadsn.ca/people/dr-karen-everett/"},
-  "Lisa Qiluqqi Koperqualuk": {"url": "https://searcharcticscience.org/person/lisa-qiluqqi-koperqualuk/"},
-  "Philippe Evoy": {"url": "https://www.earthsystemgovernance.org/person/philippe-evoy/"}
+  "Frédéric Lasserre": {
+    "url": "https://www.ulaval.ca/la-recherche/repertoire-corps-professoral/frederic-lasserre"
+  },
+  "Jean-Frédéric Morin": {
+    "url": "https://www.chaire-epi.ulaval.ca/fr/jean-frederic-morin"
+  },
+  "Mathieu Landriault": {
+    "url": "https://www.naadsn.ca/people/dr-mathieu-landriault/"
+  },
+  "Klaus Dodds": {
+    "url": "https://wilsoncenter.org/person/klaus-dodds-0"
+  },
+  "Karen Everett": {
+    "url": "https://www.naadsn.ca/people/dr-karen-everett/"
+  },
+  "Lisa Qiluqqi Koperqualuk": {
+    "url": "https://searcharcticscience.org/person/lisa-qiluqqi-koperqualuk/"
+  },
+  "Philippe Evoy": {
+    "url": "https://www.earthsystemgovernance.org/person/philippe-evoy/"
+  }
 }
