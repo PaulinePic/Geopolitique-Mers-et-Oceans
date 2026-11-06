@@ -15,9 +15,7 @@ title: "Enseignement"
 
 <dl class="cv-list">
   <dt>2023</dt>
-  <dd><strong>Université Laval, École supérieure d’études internationales.</strong> Introduction aux méthodes de la recherche interdisciplinaire (ETI 7030)</dd>
-  <dt>2019</dt>
-  <dd><strong>Université Laval, Département de Géographie.</strong> Géographie politique (GGR 2101), remplacement</dd>
+  <dd><strong>Université Laval, École supérieure d’études internationales.</strong> Introduction aux méthodes de la recherche interdisciplinaire (ETI 7030), co-enseignement</dd>
 </dl>
 
 ## Encadrement d’étudiants
