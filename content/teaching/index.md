@@ -27,4 +27,4 @@ title: "Enseignement"
   <dd><strong>Thomas Coursat</strong>, doctorat, Université Grenoble Alpes (UGA). Thèse : <em>Politiques canadienne et états-unienne en Arctique : définitions, négociations et renforcements des frontières et des souverainetés en Arctique.</em> Co-supervision avec Pierre Alexandre Beylier (professeur, UGA), superviseur principal.</dd>
 </dl>
 
-Si vos intérêts de recherche recoupent les miens, vous êtes invité·e à [me contacter](../contact/) pour discuter d’un éventuel projet de maîtrise ou de doctorat.
+Si vos intérêts de recherche recoupent les miens, n’hésitez pas à [me contacter](../contact/) pour discuter d’un éventuel projet de maîtrise ou de doctorat.
