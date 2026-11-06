@@ -71,10 +71,7 @@ menu:
     - name: Publications
       pageRef: /publication
       weight: 20
-    - name: Chaire
-      pageRef: /chaire
-      weight: 25
-    - name: Axes de recherche
+    - name: Domaines de recherche
       pageRef: /
       params:
         anchor: research-areas
