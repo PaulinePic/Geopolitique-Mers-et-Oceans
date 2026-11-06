@@ -51,11 +51,11 @@ title: "Enseignement"
   <dd>Enseignante d’Histoire-Géographie, lycée Stendhal, Grenoble (France)</dd>
 </dl>
 
-## Encadrement
+## Encadrement d’étudiants
 
 <dl class="cv-list">
-  <dt>2024-2025</dt>
-  <dd>Co-encadrement de Katérie Terrien Kennedy, maîtrise en Relations internationales (ESEI, Université Laval). Sujet : <em>Le leadership canadien en Arctique vis-à-vis les acteurs non-arctiques : le cas de la Chine.</em></dd>
+  <dt>Maîtrise</dt>
+  <dd><strong>Emilie Vandebegine</strong>, maîtrise en géographie, Université du Québec à Rimouski (UQAR). Travaille sur l’aire marine protégée de Pikialasorsuaq.</dd>
+  <dt>Doctorat</dt>
+  <dd><strong>Thomas Coursat</strong>, doctorat, Université Grenoble Alpes (UGA). Co-supervision avec Pierre Alexandre Beylier (professeur, UGA), superviseur principal.</dd>
 </dl>
-
-<!-- Le C.V. écrit « La leadership canadien en Arctique vis-à-vis les acteurs non-arctique » ; l'accord a été corrigé (« Le leadership … non-arctiques »). À confirmer avec l'intitulé officiel du mémoire. -->
