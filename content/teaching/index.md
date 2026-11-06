@@ -21,8 +21,8 @@ title: "Enseignement"
 ## Encadrement d’étudiants
 
 <dl class="cv-list">
-  <dt>Depuis janvier 2027</dt>
+  <dt>2027-</dt>
   <dd><strong>Emilie Vandebegine</strong>, maîtrise en géographie, Université du Québec à Rimouski (UQAR). Travaille sur l’aire marine protégée de Pikialasorsuaq.</dd>
-  <dt>Depuis septembre 2026</dt>
+  <dt>2026-</dt>
   <dd><strong>Thomas Coursat</strong>, doctorat, Université Grenoble Alpes (UGA). Thèse : <em>Politiques canadienne et états-unienne en Arctique : définitions, négociations et renforcements des frontières et des souverainetés en Arctique.</em> Co-supervision avec Pierre Alexandre Beylier (professeur, UGA), superviseur principal.</dd>
 </dl>
