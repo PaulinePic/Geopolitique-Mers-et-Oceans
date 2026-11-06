@@ -1,0 +1,11 @@
+{{- /* Homepage-only schema.org Person block; gated by params.mysite.discovery */ -}}
+{{- if and .IsHome (ne site.Params.mysite.discovery false) -}}
+{{- $person := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" site.Params.owner.name
+  "affiliation" (dict "@type" "Organization" "name" site.Params.owner.institution)
+  "url" site.BaseURL
+  "isBasedOn" "https://gking.harvard.edu/mysite" -}}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>
+{{- end -}}

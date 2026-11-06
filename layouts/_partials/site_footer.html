@@ -1,0 +1,22 @@
+<footer class="site-footer" data-pagefind-ignore>
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <p class="site-footer__identity"><strong>{{ site.Title }}</strong><br />{{ site.Params.owner.institution }}</p>
+      <nav aria-label="{{ i18n "footer_nav_label" }}">
+        <ul class="site-footer__links">
+          {{- range site.Menus.main }}
+          {{- $href := .URL -}}
+          {{- with .Params.anchor }}{{ $href = printf "%s#%s" site.Home.RelPermalink . }}{{ end }}
+          <li><a href="{{ $href }}">{{ .Name }}</a></li>
+          {{- end }}
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© {{ now.Year }} {{ site.Title }}</p>
+      {{- if ne site.Params.mysite.credit false }}
+      <p class="site-credit">Created using <a href="https://garyking.org/mysite">GaryKing.org/mysite</a></p>
+      {{- end }}
+    </div>
+  </div>
+</footer>

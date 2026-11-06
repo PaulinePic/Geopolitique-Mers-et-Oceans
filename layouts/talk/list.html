@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- $talks := sort (where site.RegularPages "Section" "talk") "Date" "desc" -}}
+<div class="container">
+  <article class="article">
+    {{ partial "breadcrumbs.html" . }}
+    <header class="article__header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{- range (slice "refereed" "invited" "chair" "poster") }}
+    {{- $kind := . -}}
+    {{- $group := where $talks "Params.talk_kind" $kind -}}
+    {{- with $group }}
+    <section class="talk-group">
+      <h2>{{ i18n (printf "talk_kind_%s" $kind) }}</h2>
+      <ul class="talk-list">
+        {{- range . }}
+        <li class="talk-item">
+          <span class="talk-item__date">{{ .Date | time.Format ":date_long" }}</span>
+          <span class="talk-item__main">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>.
+            {{ .Params.event }}{{ with .Params.location }}, {{ . }}{{ end }}.
+            {{- $co := slice -}}
+            {{- range .Params.authors }}{{ if ne . site.Title }}{{ $co = $co | append . }}{{ end }}{{ end -}}
+            {{- with $co }} {{ i18n "with_coauthors" }} {{ delimit . ", " }}.{{ end }}
+          </span>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+    {{- end }}
+  </article>
+</div>
+{{ end }}

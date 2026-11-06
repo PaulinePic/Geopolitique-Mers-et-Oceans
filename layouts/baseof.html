@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="{{ site.LanguageCode | default "fr-CA" }}" dir="ltr">
+  {{ partial "site_head" . }}
+  <body class="page-wrapper" id="top">
+    <a class="skip-link" href="#main">{{ i18n "skip_to_content" }}</a>
+    {{ partial "components/headers/navbar.html" . }}
+    <main id="main" class="page-body page-body--{{ if .IsHome }}home{{ else }}{{ .Section | default "page" }}{{ end }}" data-pagefind-body>
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "site_footer" . }}
+    {{ partial "components/search-modal.html" . }}
+  </body>
+</html>

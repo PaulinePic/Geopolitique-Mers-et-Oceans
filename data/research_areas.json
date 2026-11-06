@@ -1,0 +1,46 @@
+{
+  "areas": [
+    {
+      "slug": "geographie-politique",
+      "title": "Géographie politique",
+      "subcategories": ["Géographie politique", "Échelles"],
+      "chair_axis": ""
+    },
+    {
+      "slug": "geographie-mers-oceans",
+      "title": "Géographie des mers et océans",
+      "subcategories": ["Océans", "Navigation maritime"],
+      "chair_axis": "axe-1"
+    },
+    {
+      "slug": "geopolitique-arctique",
+      "title": "Géopolitique de l’Arctique",
+      "subcategories": ["Arctique"],
+      "chair_axis": ""
+    },
+    {
+      "slug": "gouvernance-communs",
+      "title": "Gouvernance des Communs",
+      "subcategories": ["Communs", "Espace extra-atmosphérique"],
+      "chair_axis": ""
+    },
+    {
+      "slug": "gouvernance-mers-oceans",
+      "title": "Gouvernance des mers et océans",
+      "subcategories": ["Gouvernance maritime", "Plateau continental", "Océan Arctique central", "Droit de la mer"],
+      "chair_axis": "axe-2"
+    },
+    {
+      "slug": "geopolitique-detroits",
+      "title": "Géopolitique des détroits",
+      "subcategories": ["Détroits", "Passages arctiques"],
+      "chair_axis": ""
+    },
+    {
+      "slug": "geopolitique-donnees-maritimes",
+      "title": "Géopolitique des données maritimes",
+      "subcategories": ["Données maritimes"],
+      "chair_axis": "axe-3"
+    }
+  ]
+}

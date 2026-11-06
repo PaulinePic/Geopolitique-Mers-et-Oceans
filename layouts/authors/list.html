@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- /* Co-authors are discovered from every publication, talk and software page; links come from data/coauthors.json. */ -}}
+{{- $names := slice -}}
+{{- range where site.RegularPages "Section" "in" (slice "publication" "talk" "software") -}}
+  {{- range .Params.authors }}{{ if ne . site.Title }}{{ $names = $names | append . }}{{ end }}{{ end -}}
+{{- end -}}
+{{- $rows := slice -}}
+{{- range ($names | uniq) -}}
+  {{- $parts := split . " " -}}
+  {{- $entry := index (site.Data.coauthors | default dict) . | default dict -}}
+  {{- $key := $entry.sort | default (printf "%s %s" (lower (index $parts (sub (len $parts) 1))) (lower .)) -}}
+  {{- $rows = $rows | append (dict "name" . "key" $key "url" $entry.url) -}}
+{{- end -}}
+<div class="container container--narrow">
+  <article class="article">
+    {{ partial "breadcrumbs.html" . }}
+    <header class="article__header">
+      <h1>{{ .Title }}</h1>
+      {{- with .Params.subtitle }}<p class="article__subtitle">{{ . }}</p>{{ end }}
+    </header>
+    <ul class="people-list">
+      {{- range sort $rows "key" }}
+      <li>{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</li>
+      {{- end }}
+    </ul>
+  </article>
+</div>
+{{ end }}

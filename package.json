@@ -1,0 +1,11 @@
+{
+  "name": "geopolitique-mers-et-oceans",
+  "private": true,
+  "description": "Site académique de Pauline Pic",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "@tailwindcss/typography": "^0.5.20",
+    "pagefind": "^1.5.0",
+    "tailwindcss": "^4.3.5"
+  }
+}

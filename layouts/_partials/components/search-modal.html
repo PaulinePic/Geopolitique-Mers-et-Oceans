@@ -1,0 +1,106 @@
+{{- $bu := urls.Parse site.BaseURL -}}
+<dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title"
+        data-pagefind="{{ "pagefind/pagefind.js" | relURL }}"
+        data-site="{{ $bu.Host }}{{ $bu.Path }}"
+        data-pagefind-ignore>
+  <div class="search-dialog__panel">
+    <form class="search-dialog__form" role="search" onsubmit="return false">
+      <label id="search-title" class="sr-only" for="search-input">{{ i18n "search_label" }}</label>
+      <input id="search-input" class="search-dialog__input" type="search" autocomplete="off" spellcheck="false"
+             placeholder="{{ i18n "search_placeholder" }}" />
+      <button type="button" class="search-dialog__close" data-search-close>{{ i18n "close" }} <kbd>Esc</kbd></button>
+    </form>
+    <p class="search-dialog__status" id="search-status" role="status" aria-live="polite"></p>
+    <ul class="search-dialog__results" id="search-results"></ul>
+  </div>
+  <script>
+    (function () {
+      var dlg = document.getElementById('search-dialog');
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+      var input = document.getElementById('search-input');
+      var list = document.getElementById('search-results');
+      var status = document.getElementById('search-status');
+      var msgNone = {{ i18n "search_no_results" }};
+      var msgFallback = {{ i18n "search_fallback" }};
+      var pf = null, loading = null, timer = null, token = 0;
+
+      function load() {
+        if (!loading) {
+          loading = import(dlg.dataset.pagefind).then(function (m) { pf = m; }).catch(function () { pf = false; });
+        }
+        return loading;
+      }
+      function open() {
+        if (!dlg.open) dlg.showModal();
+        input.focus();
+        input.select();
+        load();
+      }
+      function close() { if (dlg.open) dlg.close(); }
+      function clear() { list.textContent = ''; status.textContent = ''; }
+      function fallback(q) {
+        clear();
+        var a = document.createElement('a');
+        a.href = 'https://www.google.com/search?q=' + encodeURIComponent('site:' + dlg.dataset.site + ' ' + q);
+        a.textContent = msgFallback;
+        a.rel = 'noopener';
+        var li = document.createElement('li');
+        li.appendChild(a);
+        list.appendChild(li);
+      }
+      function render(items) {
+        clear();
+        if (!items.length) { status.textContent = msgNone; return; }
+        items.forEach(function (d) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = d.url;
+          a.className = 'search-dialog__title';
+          a.textContent = (d.meta && d.meta.title) || d.url;
+          var p = document.createElement('p');
+          p.className = 'search-dialog__excerpt';
+          p.innerHTML = d.excerpt; // Pagefind returns escaped text with <mark> highlights
+          li.appendChild(a);
+          li.appendChild(p);
+          list.appendChild(li);
+        });
+      }
+      function run(q) {
+        var my = ++token;
+        if (!q) { clear(); return; }
+        load().then(function () {
+          if (pf === false) { fallback(q); return; }
+          return pf.search(q).then(function (r) {
+            return Promise.all(r.results.slice(0, 8).map(function (x) { return x.data(); }));
+          }).then(function (items) { if (my === token) render(items); });
+        }).catch(function () { fallback(q); });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('[data-search-open]')) { e.preventDefault(); open(); }
+        else if (e.target.closest('[data-search-close]')) { close(); }
+      });
+      document.addEventListener('keydown', function (e) {
+        if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); dlg.open ? close() : open(); }
+      });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+      dlg.addEventListener('keydown', function (e) { if (e.key === 'Escape') { e.preventDefault(); close(); } });
+      dlg.addEventListener('close', function () { clear(); input.value = ''; });
+      input.addEventListener('input', function () {
+        clearTimeout(timer);
+        var q = input.value.trim();
+        timer = setTimeout(function () { run(q); }, 120);
+      });
+      dlg.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+        var links = Array.prototype.slice.call(list.querySelectorAll('a'));
+        if (!links.length) return;
+        e.preventDefault();
+        var i = links.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') i = i < links.length - 1 ? i + 1 : links.length - 1;
+        else i = i > 0 ? i - 1 : -1;
+        if (i === -1) input.focus(); else links[i].focus();
+      });
+    })();
+  </script>
+</dialog>

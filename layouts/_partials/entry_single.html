@@ -1,0 +1,65 @@
+{{- /* Shared detail page for publications, talks and software. Input: page. */ -}}
+{{- $p := . -}}
+<article class="entry" data-kind="{{ partial "kind_label.html" $p }}">
+  {{ partial "breadcrumbs.html" $p }}
+  <header class="entry__header">
+    <h1 class="entry__title">{{ $p.Title }}</h1>
+    {{- with $p.Params.authors }}
+    <p class="entry__authors">{{ partial "authors_line.html" . }}</p>
+    {{- end }}
+    <p class="entry__venue">
+      {{- with $p.Params.publication }}<em>{{ . }}</em>{{ end -}}
+      {{- with $p.Params.event }}{{ . }}{{ with $p.Params.location }}, {{ . }}{{ end }}{{ end -}}
+      {{- $when := "" -}}
+      {{- if and (eq (int $p.Date.Month) 1) (eq $p.Date.Day 1) }}{{ $when = $p.Date.Format "2006" }}{{ else }}{{ $when = $p.Date | time.Format ":date_long" }}{{ end -}}
+      {{- if or $p.Params.publication $p.Params.event }} · {{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $when }}</time>
+    </p>
+    {{- with $p.Params.status }}
+    <p class="entry__status"><span class="status-label">{{ i18n (printf "status_%s" .) }}</span></p>
+    {{- end }}
+    {{- with $p.Params.role }}
+    <p class="entry__role">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  {{- with $p.Resources.GetMatch "featured*" }}
+  <figure class="entry__figure">
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $p.Title }}" fetchpriority="high" />
+    {{- with $p.Params.image_credit }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{- end }}
+
+  {{- with $p.Params.links }}
+  <ul class="entry__links">
+    {{- range . }}
+    {{- $label := .name | default (i18n (printf "link_%s" .type)) -}}
+    {{- $href := .url -}}
+    {{- if not (hasPrefix $href "http") }}{{ $href = $href | relURL }}{{ end }}
+    <li><a class="btn" href="{{ $href }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ $label }}</a></li>
+    {{- end }}
+  </ul>
+  {{- end }}
+
+  {{- with $p.Params.abstract }}
+  <section class="entry__abstract" id="abstract">
+    <h2>{{ i18n "abstract" }}</h2>
+    <div class="prose">{{ . | markdownify }}</div>
+  </section>
+  {{- end }}
+
+  {{- with $p.Content }}
+  <div class="prose entry__body">{{ . }}</div>
+  {{- end }}
+
+  {{- $rel := partial "related_finder.html" $p -}}
+  {{- with $rel }}
+  <section class="gk-see-also" id="see-also" data-pagefind-ignore>
+    <h2>{{ i18n "see_also" }}</h2>
+    <ul>
+      {{- range . }}
+      <li><span class="gk-kind">[{{ i18n (printf "kind_%s" .kind) }}]</span> <a href="{{ .url }}"{{ if .external }} rel="noopener"{{ end }}>{{ .title }}</a>{{ with .year }} <span class="gk-year">({{ . }})</span>{{ end }}</li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</article>

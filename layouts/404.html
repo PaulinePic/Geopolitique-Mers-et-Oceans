@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="container container--narrow">
+  <article class="article">
+    <h1>{{ i18n "not_found_title" }}</h1>
+    <p>{{ i18n "not_found_text" }}</p>
+    <p>
+      <button type="button" class="btn" data-search-open>{{ i18n "search" }}</button>
+      <a class="btn btn--ghost" href="{{ site.Home.RelPermalink }}">{{ i18n "back_home" }}</a>
+    </p>
+  </article>
+</div>
+{{ end }}

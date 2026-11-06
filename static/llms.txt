@@ -1,0 +1,13 @@
+# Pauline Pic
+
+> Pauline Pic est professeure de géographie à l'Université du Québec à Rimouski (UQAR, Canada) et titulaire de la Chaire de recherche « Transformer l'action pour le climat » en géopolitique des mers et des océans. Ses recherches portent sur la gouvernance et la géopolitique de l'Arctique, la gouvernance des espaces maritimes, la gouvernance des Communs, la géopolitique des détroits et la géopolitique des données maritimes.
+
+Pages principales :
+
+- [Bio et C.V.](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/bio/)
+- [Publications](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/publication/)
+- [Chaire de recherche en géopolitique des mers et océans](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/chaire/)
+- [Présentations](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/talk/)
+- [Co-auteurs](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/authors/)
+- [Enseignement](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/teaching/)
+- [Contact](https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/contact/)

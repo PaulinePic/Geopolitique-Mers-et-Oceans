@@ -1,0 +1,26 @@
+# Ordered tabs of the Publications page. A tab is shown only when it has content.
+# `types` match `publication_types`; `status` matches the front-matter `status` field.
+# Labels live in i18n/fr.yaml as tab_<id>.
+tabs:
+  - id: articles
+    types: [journal_article]
+  - id: livres
+    types: [book]
+  - id: chapitres
+    types: [book_chapter, conference_paper]
+  - id: numeros
+    types: [special_issue]
+  - id: rapports
+    types: [report, policy_brief, working_paper]
+  - id: vulgarisation
+    types: [popular]
+  - id: presentations
+    types: [presentation]
+  - id: logiciels
+    types: [software]
+  - id: donnees
+    types: [data]
+  - id: brevets
+    types: [patent]
+  - id: en-cours
+    status: [forthcoming, in_progress]

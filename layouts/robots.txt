@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# AI agents: a short summary of this site is at {{ "llms.txt" | absURL }}
+Sitemap: {{ "sitemap.xml" | absURL }}

@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{- $chaire := site.GetPage "/chaire" -}}
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <h1 class="hero__name">{{ .Title }}</h1>
+      {{- with .Params.role }}<p class="hero__role">{{ . }}</p>{{ end }}
+      {{- with .Params.institution }}<p class="hero__institution">{{ . }}</p>{{ end }}
+      <div class="prose hero__intro">{{ .Content }}</div>
+      <ul class="hero__actions">
+        <li><a class="btn" href="{{ "bio/" | relURL }}">Bio &amp; C.V.</a></li>
+        <li><a class="btn" href="{{ "publication/" | relURL }}">{{ i18n "writings" }}</a></li>
+        <li><a class="btn" href="{{ "contact/" | relURL }}">Contact</a></li>
+      </ul>
+    </div>
+    {{- with .Params.photo }}
+    <figure class="hero__photo">
+      <img src="{{ . | relURL }}" width="600" height="750" alt="{{ $.Params.photo_alt }}" fetchpriority="high" />
+    </figure>
+    {{- end }}
+  </div>
+</section>
+
+{{- with $chaire }}
+{{- with .Params.axes }}
+<section class="chair-strip" aria-labelledby="chair-strip-title">
+  <div class="container">
+    <h2 id="chair-strip-title">{{ i18n "chair_strip_title" }}</h2>
+    <ol class="chair-strip__list">
+      {{- range $i, $a := . }}
+      <li><a href="{{ $chaire.RelPermalink }}#{{ $a.id }}"><span class="chair-strip__num">{{ add $i 1 }}</span>{{ $a.title }}</a></li>
+      {{- end }}
+    </ol>
+    <p class="chair-strip__more"><a class="inline-link" href="{{ $chaire.RelPermalink }}">{{ i18n "chair_more" }} →</a></p>
+  </div>
+</section>
+{{- end }}
+{{- end }}
+
+<section class="areas" aria-labelledby="research-areas">
+  <div class="container">
+    <h2 id="research-areas" class="areas__title">{{ i18n "research_areas" }}</h2>
+    {{- $pubs := where site.RegularPages "Section" "publication" -}}
+    {{- range site.Data.research_areas.areas }}
+    {{- $a := . -}}
+    {{- $hits := slice -}}
+    {{- range $pubs -}}
+      {{- if and (gt (len (intersect $a.subcategories (.Params.tags | default slice))) 0) (not (in (.Params.publication_types | default slice) "popular")) }}{{ $hits = $hits | append . }}{{ end -}}
+    {{- end -}}
+    {{- $hits = first 5 (sort $hits "Date" "desc") -}}
+    <details class="area" id="area-{{ .slug }}">
+      <summary class="area__summary">{{ .title }}</summary>
+      <div class="area__body">
+        {{- if $hits }}
+        <ul class="area__list">
+          {{- range $hits }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="area__meta">({{ .Date.Format "2006" }}){{ with .Params.status }} · {{ i18n (printf "status_%s" .) }}{{ end }}</span>
+          </li>
+          {{- end }}
+        </ul>
+        <p><a class="inline-link" href="{{ "publication/" | relURL }}#all&amp;area={{ .slug }}">{{ i18n "view_all" }} →</a></p>
+        {{- else if $chaire }}
+        <p><a class="inline-link" href="{{ $chaire.RelPermalink }}#{{ .chair_axis | default "axes" }}">{{ i18n "see_chair_axis" }} →</a></p>
+        {{- end }}
+      </div>
+    </details>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

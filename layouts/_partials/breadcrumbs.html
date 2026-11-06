@@ -1,0 +1,10 @@
+{{- /* Home / Section / Page */ -}}
+<nav class="breadcrumbs" aria-label="{{ i18n "breadcrumb_label" }}" data-pagefind-ignore>
+  <ol>
+    <li><a href="{{ site.Home.RelPermalink }}">{{ i18n "home" }}</a></li>
+    {{- if and .IsPage (in (slice "publication" "talk" "software") .Section) }}
+    {{- with .CurrentSection }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+    {{- end }}
+    <li aria-current="page">{{ .Title }}</li>
+  </ol>
+</nav>

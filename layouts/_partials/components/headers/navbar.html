@@ -1,0 +1,47 @@
+<header class="site-header" id="site-header" data-pagefind-ignore>
+  <div class="site-header__inner">
+    <a class="site-brand" href="{{ site.Home.RelPermalink }}">{{ with site.Params.header.navbar.logo.text }}{{ . }}{{ else }}{{ site.Title }}{{ end }}</a>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ i18n "nav_label" }}">
+      <ul class="site-nav__list">
+        {{- $page := . -}}
+        {{- range site.Menus.main }}
+        {{- $href := .URL -}}
+        {{- with .Params.anchor }}{{ $href = printf "%s#%s" site.Home.RelPermalink . }}{{ end }}
+        {{- $current := false -}}
+        {{- if not .Params.anchor }}{{ $current = or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) }}{{ end }}
+        <li><a class="site-nav__link{{ if $current }} is-current{{ end }}" href="{{ $href }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+
+    <div class="site-header__tools">
+      {{- if site.Params.header.navbar.show_search }}
+      <button type="button" class="search-open" data-search-open aria-label="{{ i18n "search" }}" title="{{ i18n "search" }} (Ctrl&nbsp;K / ⌘&nbsp;K)">
+        <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16.2" y2="16.2"></line></svg>
+      </button>
+      {{- end }}
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="{{ i18n "menu" }}">
+        <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+      </button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var header = document.getElementById('site-header');
+      var btn = document.getElementById('nav-toggle');
+      if (!header || !btn) return;
+      btn.addEventListener('click', function () {
+        var open = header.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && header.classList.contains('is-open')) {
+          header.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.focus();
+        }
+      });
+    })();
+  </script>
+</header>

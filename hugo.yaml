@@ -1,0 +1,90 @@
+baseURL: "https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/" # MUST end with slash
+title: "Pauline Pic"
+languageCode: fr-CA
+defaultContentLanguage: fr
+timeZone: America/Toronto
+enableRobotsTXT: true
+buildFuture: true # forthcoming works carry 2027 dates
+disableKinds: [taxonomy, term] # no auto-generated tag/author term pages
+
+module:
+  imports:
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
+
+outputs:
+  home: [HTML, RSS]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  description: "Pauline Pic, professeure de géographie à l'Université du Québec à Rimouski, titulaire de la Chaire de recherche Transformer l'action pour le climat en géopolitique des mers et des océans."
+  owner:
+    name: "Pauline Pic"
+    institution: "Université du Québec à Rimouski (UQAR)"
+    email: "pauline_pic@uqar.ca"
+  appearance:
+    theme_day: custom
+    theme_night: custom
+    color_mode: light
+    color: blue
+    font: native
+    font_size: L
+  header:
+    navbar:
+      enable: true
+      show_search: true
+      logo:
+        text: "Pauline Pic"
+  features:
+    search:
+      provider: flexsearch # Blox default; Pagefind runs through the overridden search modal
+  extensions:
+    css:
+      - css/custom.css
+  mysite:
+    credit: true # footer credit "Created using GaryKing.org/mysite"
+    discovery: true # invisible generator meta tag + homepage Person JSON-LD
+    design:
+      seed: "none"
+      note: "Design drawn by hand from the owner's CV logo palette; the mysite design quest file was unreachable during the build."
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  publication: /publication/:contentbasename/
+  talk: /talk/:contentbasename/
+  software: /software/:contentbasename/
+
+sitemap:
+  changefreq: monthly
+  priority: 0.5
+
+menu:
+  main:
+    - name: Bio & C.V.
+      pageRef: /bio
+      weight: 10
+    - name: Publications
+      pageRef: /publication
+      weight: 20
+    - name: Chaire
+      pageRef: /chaire
+      weight: 25
+    - name: Axes de recherche
+      pageRef: /
+      params:
+        anchor: research-areas
+      weight: 30
+    - name: Co-auteurs
+      pageRef: /authors
+      weight: 50
+    - name: Enseignement
+      pageRef: /teaching
+      weight: 60
+    - name: Contact
+      pageRef: /contact
+      weight: 70

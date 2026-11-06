@@ -1,0 +1,17 @@
+{{- /* Input: page. Returns the kind key; publication_types take precedence over the section name. */ -}}
+{{- $types := .Params.publication_types | default slice -}}
+{{- $kind := "paper" -}}
+{{- if in $types "data" }}{{ $kind = "dataset" }}
+{{- else if in $types "software" }}{{ $kind = "software" }}
+{{- else if in $types "book" }}{{ $kind = "book" }}
+{{- else if in $types "patent" }}{{ $kind = "patent" }}
+{{- else if in $types "court_brief" }}{{ $kind = "court_brief" }}
+{{- else if in $types "presentation" }}{{ $kind = "talk" }}
+{{- else if in $types "special_issue" }}{{ $kind = "special_issue" }}
+{{- else if or (in $types "book_chapter") (in $types "conference_paper") }}{{ $kind = "chapter" }}
+{{- else if or (in $types "report") (in $types "policy_brief") (in $types "working_paper") }}{{ $kind = "report" }}
+{{- else if in $types "popular" }}{{ $kind = "popular" }}
+{{- else if eq .Section "talk" }}{{ $kind = "talk" }}
+{{- else if eq .Section "software" }}{{ $kind = "software" }}
+{{- end -}}
+{{- return $kind -}}

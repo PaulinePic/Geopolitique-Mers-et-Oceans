@@ -1,0 +1,48 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {{- if ne site.Params.mysite.discovery false }}
+  <meta name="generator" content="Created using GaryKing.org/mysite (https://gking.harvard.edu/mysite)" />
+  {{- end }}
+  {{- if or .Params.private .Params.unlisted }}
+  <meta name="robots" content="noindex" />
+  {{- end }}
+
+  {{- $desc := "" -}}
+  {{- if .Params.summary }}{{ $desc = .Params.summary }}
+  {{- else if .Params.abstract }}{{ $desc = .Params.abstract }}
+  {{- else if .Params.subtitle }}{{ $desc = .Params.subtitle }}
+  {{- else }}{{ $desc = site.Params.description }}{{ end }}
+  {{- $title := site.Title -}}
+  {{- if .IsHome }}{{ $title = printf "%s | %s" site.Title "Professeure de géographie, UQAR" }}{{ else }}{{ $title = printf "%s | %s" .Title site.Title }}{{ end }}
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $desc | plainify | htmlUnescape | truncate 300 }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}" />
+  {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ site.Title }}" />{{ end }}
+
+  <meta property="og:site_name" content="{{ site.Title }}" />
+  <meta property="og:type" content="{{ if .IsHome }}profile{{ else }}website{{ end }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:title" content="{{ $title }}" />
+  <meta property="og:description" content="{{ $desc | plainify | htmlUnescape | truncate 300 }}" />
+  <meta property="og:locale" content="{{ site.LanguageCode | default "fr-CA" | replaceRE "-" "_" }}" />
+  <meta property="og:image" content="{{ "images/pauline-pic.jpg" | absURL }}" />
+  <meta name="twitter:card" content="summary" />
+
+  {{/* Hugo Blox colour theme + Tailwind pipeline, then the project stylesheet */}}
+  {{- $theme_css := resources.Get "css/themes/blue.css" | minify }}
+  <link rel="stylesheet" href="{{ $theme_css.RelPermalink }}" />
+  {{ with (templates.Defer (dict "key" "tailwind-css")) }}
+    {{ partial "css.html" . }}
+  {{ end }}
+  {{- with resources.Get "css/custom.css" | minify | fingerprint "sha256" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" />
+  {{- end }}
+
+  {{ partial "scholarly_meta.html" . }}
+  {{ partial "owner_jsonld.html" . }}
+</head>

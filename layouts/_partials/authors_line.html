@@ -1,0 +1,3 @@
+{{- /* Input: slice of author names. The site owner is set in bold. */ -}}
+{{- $names := . -}}
+{{- range $i, $n := $names }}{{ if $i }}; {{ end }}{{ if eq $n site.Title }}<strong>{{ $n }}</strong>{{ else }}{{ $n }}{{ end }}{{ end -}}

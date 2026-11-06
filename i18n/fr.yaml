@@ -1,0 +1,197 @@
+# Libellés de l'interface (français). Modifiez ici, pas dans les gabarits.
+- id: skip_to_content
+  translation: "Aller au contenu"
+- id: nav_label
+  translation: "Navigation principale"
+- id: footer_nav_label
+  translation: "Plan du site"
+- id: breadcrumb_label
+  translation: "Fil d’Ariane"
+- id: home
+  translation: "Accueil"
+- id: menu
+  translation: "Menu"
+- id: search
+  translation: "Rechercher"
+- id: search_label
+  translation: "Rechercher dans le site"
+- id: search_placeholder
+  translation: "Rechercher dans le site…"
+- id: search_no_results
+  translation: "Aucun résultat."
+- id: search_fallback
+  translation: "La recherche du site est indisponible. Rechercher avec Google →"
+- id: close
+  translation: "Fermer"
+- id: writings
+  translation: "Publications"
+- id: research_areas
+  translation: "Axes de recherche"
+- id: chair_strip_title
+  translation: "Axes de la Chaire"
+- id: chair_more
+  translation: "Présentation de la Chaire"
+- id: chair_axes
+  translation: "Axes de recherche de la chaire"
+- id: axis
+  translation: "Axe"
+- id: view_all
+  translation: "Tout voir"
+- id: see_chair_axis
+  translation: "Voir l’axe de recherche de la Chaire"
+- id: see_also
+  translation: "Voir aussi"
+- id: abstract
+  translation: "Résumé"
+- id: with_coauthors
+  translation: "Avec"
+- id: back_home
+  translation: "Retour à l’accueil"
+- id: not_found_title
+  translation: "Page introuvable"
+- id: not_found_text
+  translation: "Cette page n’existe pas ou a été déplacée."
+
+# Liens des fiches
+- id: link_publisher
+  translation: "Version de l’éditeur"
+- id: link_pdf
+  translation: "Article (PDF)"
+- id: link_doi
+  translation: "DOI"
+- id: link_dataset
+  translation: "Données de réplication"
+- id: link_slides
+  translation: "Diapositives"
+- id: link_code
+  translation: "Code source"
+
+# Étiquettes de type affichées entre crochets dans « Voir aussi »
+- id: kind_paper
+  translation: "Article"
+- id: kind_book
+  translation: "Livre"
+- id: kind_chapter
+  translation: "Chapitre"
+- id: kind_special_issue
+  translation: "Numéro spécial"
+- id: kind_report
+  translation: "Rapport"
+- id: kind_popular
+  translation: "Vulgarisation"
+- id: kind_talk
+  translation: "Présentation"
+- id: kind_software
+  translation: "Logiciel"
+- id: kind_dataset
+  translation: "Données"
+- id: kind_patent
+  translation: "Brevet"
+- id: kind_court_brief
+  translation: "Mémoire judiciaire"
+- id: kind_link
+  translation: "Lien"
+
+# Statuts
+- id: status_forthcoming
+  translation: "À paraître"
+- id: status_in_progress
+  translation: "En cours"
+
+# Page des publications
+- id: tabs_label
+  translation: "Catégories de publications"
+- id: filters_label
+  translation: "Filtres"
+- id: tab_all
+  translation: "Tout"
+- id: tab_articles
+  translation: "Articles"
+- id: tab_livres
+  translation: "Livres"
+- id: tab_chapitres
+  translation: "Chapitres et actes"
+- id: tab_numeros
+  translation: "Numéros spéciaux"
+- id: tab_rapports
+  translation: "Rapports et notes"
+- id: tab_vulgarisation
+  translation: "Vulgarisation"
+- id: tab_presentations
+  translation: "Présentations"
+- id: tab_logiciels
+  translation: "Logiciels"
+- id: tab_donnees
+  translation: "Données"
+- id: tab_brevets
+  translation: "Brevets"
+- id: tab_en-cours
+  translation: "À paraître et en cours"
+- id: type_journal_article
+  translation: "Article"
+- id: type_book
+  translation: "Livre"
+- id: type_book_chapter
+  translation: "Chapitre"
+- id: type_conference_paper
+  translation: "Actes de colloque"
+- id: type_special_issue
+  translation: "Numéro spécial"
+- id: type_report
+  translation: "Rapport"
+- id: type_policy_brief
+  translation: "Note politique"
+- id: type_working_paper
+  translation: "Document de travail"
+- id: type_popular
+  translation: "Vulgarisation"
+- id: type_presentation
+  translation: "Présentation"
+- id: type_software
+  translation: "Logiciel"
+- id: type_data
+  translation: "Données"
+- id: type_patent
+  translation: "Brevet"
+- id: filter_search
+  translation: "Recherche"
+- id: filter_search_placeholder
+  translation: "Titre, auteur, revue…"
+- id: filter_area
+  translation: "Axe de recherche"
+- id: filter_area_all
+  translation: "Tous les axes"
+- id: filter_type
+  translation: "Type"
+- id: filter_year
+  translation: "Année"
+- id: filter_reset
+  translation: "Réinitialiser"
+- id: sort_label
+  translation: "Trier par"
+- id: sort_newest
+  translation: "Plus récent d’abord"
+- id: sort_oldest
+  translation: "Plus ancien d’abord"
+- id: sort_az
+  translation: "Titre A–Z"
+- id: sort_za
+  translation: "Titre Z–A"
+- id: download_bibtex
+  translation: "Télécharger les citations (BibTeX)"
+- id: bibtex_filename
+  translation: "pauline-pic-citations.bib"
+- id: no_results
+  translation: "Aucune publication ne correspond à ces filtres."
+- id: results_pattern
+  translation: "{{ .Shown }} sur {{ .Total }} résultats"
+
+# Présentations
+- id: talk_kind_refereed
+  translation: "Présentations orales avec arbitrage"
+- id: talk_kind_invited
+  translation: "Conférences invitées"
+- id: talk_kind_chair
+  translation: "Présidence et organisation de sessions"
+- id: talk_kind_poster
+  translation: "Présentations par affiche avec arbitrage"

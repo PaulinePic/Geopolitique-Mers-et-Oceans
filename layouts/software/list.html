@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{- $items := sort (where site.RegularPages "Section" "software") "Date" "desc" -}}
+<div class="container">
+  <article class="article">
+    {{ partial "breadcrumbs.html" . }}
+    <header class="article__header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <ul class="plain-list">
+      {{- range $items }}
+      <li class="pub-list-item">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{- with .Params.authors }}<span class="area__meta"> {{ partial "authors_line.html" . }}</span>{{ end }}
+      </li>
+      {{- end }}
+    </ul>
+  </article>
+</div>
+{{ end }}

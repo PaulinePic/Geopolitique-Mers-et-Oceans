@@ -1,0 +1,187 @@
+# English fallback labels (the site language is French; see fr.yaml)
+- id: skip_to_content
+  translation: Skip to content
+- id: nav_label
+  translation: Main navigation
+- id: footer_nav_label
+  translation: Site map
+- id: breadcrumb_label
+  translation: Breadcrumb
+- id: home
+  translation: Home
+- id: menu
+  translation: Menu
+- id: search
+  translation: Search
+- id: search_label
+  translation: Search the site
+- id: search_placeholder
+  translation: Search the site…
+- id: search_no_results
+  translation: No results.
+- id: search_fallback
+  translation: Site search is unavailable. Search with Google →
+- id: close
+  translation: Close
+- id: writings
+  translation: Publications
+- id: research_areas
+  translation: Research areas
+- id: chair_strip_title
+  translation: Chair research axes
+- id: chair_more
+  translation: About the Chair
+- id: chair_axes
+  translation: Research axes of the Chair
+- id: axis
+  translation: Axis
+- id: view_all
+  translation: View all
+- id: see_chair_axis
+  translation: See the Chair's research axis
+- id: see_also
+  translation: See also
+- id: abstract
+  translation: Abstract
+- id: with_coauthors
+  translation: With
+- id: back_home
+  translation: Back to home
+- id: not_found_title
+  translation: Page not found
+- id: not_found_text
+  translation: This page does not exist or has moved.
+- id: link_publisher
+  translation: Publisher's version
+- id: link_pdf
+  translation: Article (PDF)
+- id: link_doi
+  translation: DOI
+- id: link_dataset
+  translation: Replication data
+- id: link_slides
+  translation: Slides
+- id: link_code
+  translation: Source code
+- id: kind_paper
+  translation: Paper
+- id: kind_book
+  translation: Book
+- id: kind_chapter
+  translation: Chapter
+- id: kind_special_issue
+  translation: Special issue
+- id: kind_report
+  translation: Report
+- id: kind_popular
+  translation: Popular
+- id: kind_talk
+  translation: Presentation
+- id: kind_software
+  translation: Software
+- id: kind_dataset
+  translation: Dataset
+- id: kind_patent
+  translation: Patent
+- id: kind_court_brief
+  translation: Court brief
+- id: kind_link
+  translation: Link
+- id: status_forthcoming
+  translation: Forthcoming
+- id: status_in_progress
+  translation: In progress
+- id: tabs_label
+  translation: Publication categories
+- id: filters_label
+  translation: Filters
+- id: tab_all
+  translation: All
+- id: tab_articles
+  translation: Articles
+- id: tab_livres
+  translation: Books
+- id: tab_chapitres
+  translation: Chapters and proceedings
+- id: tab_numeros
+  translation: Special issues
+- id: tab_rapports
+  translation: Reports and briefs
+- id: tab_vulgarisation
+  translation: Popular writing
+- id: tab_presentations
+  translation: Presentations
+- id: tab_logiciels
+  translation: Software
+- id: tab_donnees
+  translation: Data
+- id: tab_brevets
+  translation: Patents
+- id: tab_en-cours
+  translation: Forthcoming and in progress
+- id: type_journal_article
+  translation: Article
+- id: type_book
+  translation: Book
+- id: type_book_chapter
+  translation: Chapter
+- id: type_conference_paper
+  translation: Proceedings
+- id: type_special_issue
+  translation: Special issue
+- id: type_report
+  translation: Report
+- id: type_policy_brief
+  translation: Policy brief
+- id: type_working_paper
+  translation: Working paper
+- id: type_popular
+  translation: Popular
+- id: type_presentation
+  translation: Presentation
+- id: type_software
+  translation: Software
+- id: type_data
+  translation: Data
+- id: type_patent
+  translation: Patent
+- id: filter_search
+  translation: Search
+- id: filter_search_placeholder
+  translation: Title, author, venue…
+- id: filter_area
+  translation: Research area
+- id: filter_area_all
+  translation: All areas
+- id: filter_type
+  translation: Type
+- id: filter_year
+  translation: Year
+- id: filter_reset
+  translation: Reset
+- id: sort_label
+  translation: Sort by
+- id: sort_newest
+  translation: Newest first
+- id: sort_oldest
+  translation: Oldest first
+- id: sort_az
+  translation: Title A–Z
+- id: sort_za
+  translation: Title Z–A
+- id: download_bibtex
+  translation: Download citations (BibTeX)
+- id: bibtex_filename
+  translation: pauline-pic-citations.bib
+- id: no_results
+  translation: No publication matches these filters.
+- id: results_pattern
+  translation: '{{ .Shown }} of {{ .Total }} results'
+- id: talk_kind_refereed
+  translation: Refereed oral presentations
+- id: talk_kind_invited
+  translation: Invited talks
+- id: talk_kind_chair
+  translation: Session chairing and organization
+- id: talk_kind_poster
+  translation: Refereed posters

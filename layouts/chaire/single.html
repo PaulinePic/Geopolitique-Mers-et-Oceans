@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container container--narrow">
+  <article class="article">
+    {{ partial "breadcrumbs.html" . }}
+    <header class="article__header">
+      <h1>{{ .Title }}</h1>
+      {{- with .Params.subtitle }}<p class="article__subtitle">{{ . }}</p>{{ end }}
+    </header>
+    <div class="prose">{{ .Content }}</div>
+    {{- with .Params.axes }}
+    <section class="axes" id="axes">
+      <h2>{{ i18n "chair_axes" }}</h2>
+      {{- range $i, $a := . }}
+      <section class="axis" id="{{ $a.id }}">
+        <h3><span class="axis__num">{{ i18n "axis" }} {{ add $i 1 }}</span> {{ $a.title }}</h3>
+        <ul>
+          {{- range $a.items }}<li>{{ . | markdownify }}</li>{{ end }}
+        </ul>
+      </section>
+      {{- end }}
+    </section>
+    {{- end }}
+  </article>
+</div>
+{{ end }}

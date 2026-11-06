@@ -1,0 +1,139 @@
+{{ define "main" }}
+{{- /*
+  Writings: dense, filterable list. Every entry is server-rendered (visible without JS);
+  assets/js/writings.js adds tabs, filters, sorting, BibTeX export and URL-hash routing.
+*/ -}}
+{{- $pages := sort (where site.RegularPages "Section" "in" (slice "publication" "talk" "software")) "Date" "desc" -}}
+{{- $tabsCfg := site.Data.writings_tabs.tabs -}}
+{{- $areas := site.Data.research_areas.areas -}}
+
+{{- $entries := slice -}}
+{{- $usedTabs := slice -}}
+{{- $years := slice -}}
+{{- range $i, $p := $pages -}}
+  {{- $types := $p.Params.publication_types | default slice -}}
+  {{- $tabIDs := slice -}}
+  {{- range $tabsCfg -}}
+    {{- $t := . -}}
+    {{- if and $t.types (gt (len (intersect $t.types $types)) 0) }}{{ $tabIDs = $tabIDs | append $t.id }}{{ end -}}
+    {{- if and $t.status $p.Params.status (in $t.status $p.Params.status) }}{{ $tabIDs = $tabIDs | append $t.id }}{{ end -}}
+  {{- end -}}
+  {{- $areaSlugs := slice -}}
+  {{- range $areas -}}
+    {{- if gt (len (intersect .subcategories ($p.Params.tags | default slice))) 0 }}{{ $areaSlugs = $areaSlugs | append .slug }}{{ end -}}
+  {{- end -}}
+  {{- $doi := "" -}}
+  {{- range $p.Params.links | default slice -}}
+    {{- if and (not $doi) (findRE `^https?://(dx\.)?doi\.org/` (.url | default "")) }}{{ $doi = replaceRE `^https?://(dx\.)?doi\.org/` "" .url }}{{ end -}}
+  {{- end -}}
+  {{- $year := $p.Date.Format "2006" -}}
+  {{- $usedTabs = $usedTabs | append $tabIDs -}}
+  {{- $years = $years | append $year -}}
+  {{- $entries = $entries | append (dict
+        "i" $i
+        "title" $p.Title
+        "url" $p.RelPermalink
+        "year" $year
+        "authors" ($p.Params.authors | default slice)
+        "venue" ($p.Params.publication | default $p.Params.event | default "")
+        "location" ($p.Params.location | default "")
+        "abstract" ($p.Params.abstract | default "" | plainify | htmlUnescape)
+        "types" $types
+        "tabs" $tabIDs
+        "areas" $areaSlugs
+        "tags" ($p.Params.tags | default slice)
+        "status" ($p.Params.status | default "")
+        "doi" $doi
+        "kind" (partial "kind_label.html" $p)) -}}
+{{- end -}}
+{{- $usedTabs = $usedTabs | uniq -}}
+{{- $typeLabels := dict -}}
+{{- range $entries }}{{ range .types }}{{ $typeLabels = merge $typeLabels (dict . (i18n (printf "type_%s" .))) }}{{ end }}{{ end -}}
+{{- $years = sort ($years | uniq) "value" "desc" -}}
+
+<div class="container container--wide writings"
+     data-total="{{ len $entries }}"
+     data-type-labels="{{ $typeLabels | jsonify }}"
+     data-count-pattern="{{ i18n "results_pattern" (dict "Shown" "__S__" "Total" "__T__") }}"
+     data-label-bibtex="{{ i18n "bibtex_filename" }}">
+  <header class="writings__header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <div class="pub-tabs-wrap">
+    <nav class="pub-tabs" role="tablist" aria-label="{{ i18n "tabs_label" }}">
+      <button type="button" class="tab-btn active" data-tab="all" role="tab" aria-selected="true">{{ i18n "tab_all" }}</button>
+      {{- range $tabsCfg }}
+      {{- if in $usedTabs .id }}
+      <button type="button" class="tab-btn" data-tab="{{ .id }}" role="tab" aria-selected="false">{{ i18n (printf "tab_%s" .id) }}</button>
+      {{- end }}
+      {{- end }}
+    </nav>
+  </div>
+
+  <div class="writings__layout">
+    <aside class="pub-sidebar" aria-label="{{ i18n "filters_label" }}">
+      <div class="filter-block">
+        <label class="filter-label" for="f-q">{{ i18n "filter_search" }}</label>
+        <input id="f-q" class="filter-input" type="search" autocomplete="off" placeholder="{{ i18n "filter_search_placeholder" }}" />
+      </div>
+      <div class="filter-block">
+        <label class="filter-label" for="f-area">{{ i18n "filter_area" }}</label>
+        <select id="f-area" class="filter-select">
+          <option value="">{{ i18n "filter_area_all" }}</option>
+          {{- range $areas }}<option value="{{ .slug }}">{{ .title }}</option>{{ end }}
+        </select>
+      </div>
+      <fieldset class="filter-block filter-block--types" id="f-types-block" hidden>
+        <legend class="filter-label">{{ i18n "filter_type" }}</legend>
+        <div class="check-list" id="f-types"></div>
+      </fieldset>
+      <fieldset class="filter-block">
+        <legend class="filter-label">{{ i18n "filter_year" }}</legend>
+        <div class="check-list check-list--scroll" id="f-years">
+          {{- range $years }}
+          <label class="check-row"><input type="checkbox" value="{{ . }}" /> <span>{{ . }}</span></label>
+          {{- end }}
+        </div>
+      </fieldset>
+      <button type="button" class="btn btn--ghost btn--small" id="f-reset">{{ i18n "filter_reset" }}</button>
+    </aside>
+
+    <section class="pub-results" aria-live="polite">
+      <div class="pub-toolbar">
+        <p class="result-count" id="result-count">{{ i18n "results_pattern" (dict "Shown" (len $entries) "Total" (len $entries)) }}</p>
+        <div class="pub-toolbar__actions">
+          <label class="sr-only" for="f-sort">{{ i18n "sort_label" }}</label>
+          <select id="f-sort" class="filter-select filter-select--inline">
+            <option value="newest">{{ i18n "sort_newest" }}</option>
+            <option value="oldest">{{ i18n "sort_oldest" }}</option>
+            <option value="az">{{ i18n "sort_az" }}</option>
+            <option value="za">{{ i18n "sort_za" }}</option>
+          </select>
+          <button type="button" class="btn btn--ghost btn--small" id="f-bibtex">{{ i18n "download_bibtex" }}</button>
+        </div>
+      </div>
+
+      <div class="pub-list" id="pub-list">
+        {{- range $e := $entries }}
+        <article class="pub-item" data-i="{{ $e.i }}" data-tab="{{ delimit $e.tabs " " }}" data-year="{{ $e.year }}" data-types="{{ delimit $e.types " " }}" data-areas="{{ delimit $e.areas " " }}">
+          <p class="pub-item__line">
+            {{- with $e.authors }}<span class="pub-item__authors">{{ partial "authors_line.html" . }}</span>{{ end }}
+            <span class="pub-item__year">({{ $e.year }})</span>.
+            <a class="pub-item__title" href="{{ $e.url }}">{{ $e.title }}</a>.
+            {{- with $e.venue }} <em class="pub-item__venue">{{ . }}</em>{{ with $e.location }}, {{ . }}{{ end }}.{{ end }}
+            {{- with $e.status }} <span class="pub-item__status">{{ i18n (printf "status_%s" .) }}</span>{{ end }}
+            <span class="pub-item__kind">{{ i18n (printf "kind_%s" $e.kind) }}</span>
+          </p>
+        </article>
+        {{- end }}
+      </div>
+      <p class="pub-empty" id="pub-empty" hidden>{{ i18n "no_results" }}</p>
+    </section>
+  </div>
+
+  <script type="application/json" id="pub-data">{{ $entries | jsonify | safeJS }}</script>
+</div>
+{{- $js := resources.Get "js/writings.js" | minify | fingerprint "sha256" -}}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}

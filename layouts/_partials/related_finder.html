@@ -1,0 +1,141 @@
+{{- /*
+  related_finder: automatic "See Also" for publication, talk and software pages.
+  Input: the current page. Returns a slice of dicts {kind, title, url, year, external}.
+
+  1.  Explicit front matter always wins: related_papers / related_talks / related_software /
+      related_datasets (+ legacy related_paper / related_dataset), see_also, dataverse_url.
+  2.  Category siblings: pages sharing a subcategory (tag) listed in data/research_areas.json.
+  3.  Scoring backfill: +2 per shared title token, +1 per shared author (owner excluded),
+      +2 per shared tag. Threshold 4, relaxed to 2 when fewer than 3 explicit picks exist.
+  Cap 8, sorted by score then year, title-level dedup.
+*/ -}}
+{{- $p := . -}}
+{{- $owner := site.Title -}}
+{{- $stop := slice "a" "an" "and" "the" "of" "for" "in" "on" "to" "with" "by" "at" "as" "is" "are" "be" "or" "from" "into" "using" "via" "new" "not" "no" "it" "its" "we" "our" "their" "you" "your" "this" "that" "these" "those" "but" "if" "than" "then" "so" "can" "will" "would" "could" "should" "may" "might" "also" "more" "most" "some" "all" "any" "each" "every" "who" "whom" "which" "what" "when" "where" "why" "how" "about" "between" "among" "through" "over" "under" "after" "before" "upon" "across" "per" "vs" "de" "la" "les" "et" "du" -}}
+{{- $all := where site.RegularPages "Section" "in" (slice "publication" "talk" "software") -}}
+{{- $areas := site.Data.research_areas.areas | default slice -}}
+{{- $pSlug := path.Base $p.File.Dir -}}
+
+{{- /* current page: title tokens, author keys, tags */ -}}
+{{- $ptoks := slice -}}
+{{- range findRE `[\p{L}\p{N}]+` (lower $p.Title) -}}
+  {{- if and (ge (strings.RuneCount .) 3) (not (in $stop .)) }}{{ $ptoks = $ptoks | append . }}{{ end -}}
+{{- end -}}
+{{- $ptoks = $ptoks | uniq -}}
+{{- $pkeys := slice -}}
+{{- range $p.Params.authors -}}
+  {{- if ne . $owner -}}
+    {{- $parts := split . " " -}}
+    {{- $pkeys = $pkeys | append (printf "%s|%s" (lower (index $parts (sub (len $parts) 1))) (lower (substr (index $parts 0) 0 1))) -}}
+  {{- end -}}
+{{- end -}}
+{{- $ptags := $p.Params.tags | default slice -}}
+{{- $ptitle := lower $p.Title -}}
+{{- $ptypes := $p.Params.publication_types | default slice -}}
+
+{{- /* explicit slugs */ -}}
+{{- $explicit := slice -}}
+{{- range (slice "related_papers" "related_talks" "related_software" "related_datasets") -}}
+  {{- with index $p.Params . }}{{ $explicit = $explicit | append . }}{{ end -}}
+{{- end -}}
+{{- with $p.Params.related_paper }}{{ $explicit = $explicit | append (slice .) }}{{ end -}}
+{{- with $p.Params.related_dataset }}{{ $explicit = $explicit | append (slice .) }}{{ end -}}
+{{- $explicitSlugs := $explicit -}}
+{{- $seeAlsoInternal := slice -}}
+{{- range $p.Params.see_also -}}
+  {{- if .slug }}{{ $seeAlsoInternal = $seeAlsoInternal | append .slug }}{{ end -}}
+{{- end -}}
+
+{{- /* response/comment papers and book editions */ -}}
+{{- $isResponse := findRE `^(response to|reply to|comment on|rejoinder)` $ptitle -}}
+{{- $baseTitle := replaceRE `(?i),?\s*(new|revised|second|third|\d+(st|nd|rd|th))\s+edition$` "" $ptitle -}}
+
+{{- $scored := slice -}}
+{{- $bestOverlap := 0 -}}
+{{- $bestURL := "" -}}
+{{- range $all -}}
+  {{- if ne .RelPermalink $p.RelPermalink -}}
+    {{- $c := . -}}
+    {{- $cSlug := path.Base $c.File.Dir -}}
+    {{- $ctoks := slice -}}
+    {{- range findRE `[\p{L}\p{N}]+` (lower $c.Title) -}}
+      {{- if and (ge (strings.RuneCount .) 3) (not (in $stop .)) }}{{ $ctoks = $ctoks | append . }}{{ end -}}
+    {{- end -}}
+    {{- $ctoks = $ctoks | uniq -}}
+    {{- $ckeys := slice -}}
+    {{- range $c.Params.authors -}}
+      {{- if ne . $owner -}}
+        {{- $parts := split . " " -}}
+        {{- $ckeys = $ckeys | append (printf "%s|%s" (lower (index $parts (sub (len $parts) 1))) (lower (substr (index $parts 0) 0 1))) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $ctags := $c.Params.tags | default slice -}}
+    {{- $tokOverlap := len (intersect $ptoks $ctoks) -}}
+    {{- $keyOverlap := len (intersect $pkeys $ckeys) -}}
+    {{- $tagOverlap := len (intersect $ptags $ctags) -}}
+    {{- $score := add (add (mul 2 $tokOverlap) $keyOverlap) (mul 2 $tagOverlap) -}}
+
+    {{- /* priority 2: category siblings (a shared subcategory in research_areas.json) */ -}}
+    {{- $sibling := false -}}
+    {{- range $areas -}}
+      {{- $sub := .subcategories | default slice -}}
+      {{- if and (gt (len (intersect $sub $ptags)) 0) (gt (len (intersect $sub $ctags)) 0) }}{{ $sibling = true }}{{ end -}}
+    {{- end -}}
+    {{- if $sibling }}{{ $score = add $score 3 }}{{ end -}}
+
+    {{- /* priority 1: explicit */ -}}
+    {{- $pinned := or (in $explicitSlugs $cSlug) (in $seeAlsoInternal $cSlug) -}}
+
+    {{- /* response / comment papers: pin the subject paper by title-keyword overlap */ -}}
+    {{- if and $isResponse (gt $tokOverlap $bestOverlap) (ge $tokOverlap 2) }}
+      {{- $bestOverlap = $tokOverlap -}}{{- $bestURL = $c.RelPermalink -}}
+    {{- end -}}
+    {{- /* book editions */ -}}
+    {{- if and (in $ptypes "book") (in ($c.Params.publication_types | default slice) "book") (eq $baseTitle (replaceRE `(?i),?\s*(new|revised|second|third|\d+(st|nd|rd|th))\s+edition$` "" (lower $c.Title))) }}
+      {{- $pinned = true -}}
+    {{- end -}}
+
+    {{- $scored = $scored | append (dict "page" $c "score" $score "pinned" $pinned "sibling" $sibling) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* explicit count (pinned picks) decides the threshold */ -}}
+{{- $explicitCount := 0 -}}
+{{- range $scored }}{{ if .pinned }}{{ $explicitCount = add $explicitCount 1 }}{{ end }}{{ end -}}
+{{- $threshold := 4 -}}
+{{- if lt $explicitCount 3 }}{{ $threshold = 2 }}{{ end -}}
+
+{{- $rows := slice -}}
+{{- range $scored -}}
+  {{- $c := .page -}}
+  {{- $rank := .score -}}
+  {{- if .pinned }}{{ $rank = add 100000 .score }}{{ end -}}
+  {{- if eq $c.RelPermalink $bestURL }}{{ $rank = add 200000 .score }}{{ end -}}
+  {{- if or .pinned (eq $c.RelPermalink $bestURL) (ge .score $threshold) -}}
+    {{- $rows = $rows | append (dict "kind" (partial "kind_label.html" $c) "title" $c.Title "url" $c.RelPermalink "year" ($c.Date.Format "2006") "external" false "rank" (add (mul $rank 10000) (int ($c.Date.Format "2006")))) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* external see_also, dataverse_url, inline Dataverse URL in the abstract */ -}}
+{{- $external := slice -}}
+{{- range $p.Params.see_also -}}
+  {{- if .url }}{{ $external = $external | append (dict "kind" "link" "title" (.title | default .url) "url" .url "year" "" "external" true "rank" 900000000) }}{{ end -}}
+{{- end -}}
+{{- $dv := $p.Params.dataverse_url -}}
+{{- if not $dv }}
+  {{- with findRE `https?://(?:dataverse\.harvard\.edu|doi\.org/10\.7910)/[^\s"<>)]+` ($p.Params.abstract | default "") }}{{ $dv = index . 0 }}{{ end -}}
+{{- end -}}
+{{- with $dv }}{{ $external = $external | append (dict "kind" "dataset" "title" ($p.Params.dataverse_name | default "Harvard Dataverse") "url" . "year" "" "external" true "rank" 950000000) }}{{ end -}}
+
+{{- /* sort, dedupe by normalised title, cap at 8 */ -}}
+{{- $sorted := sort (append $external $rows) "rank" "desc" -}}
+{{- $seen := slice (replaceRE `[^a-z0-9]` "" $ptitle) -}}
+{{- $out := slice -}}
+{{- range $sorted -}}
+  {{- $norm := replaceRE `[^a-z0-9]` "" (lower .title) -}}
+  {{- if and (lt (len $out) 8) (not (in $seen $norm)) -}}
+    {{- $seen = $seen | append $norm -}}
+    {{- $out = $out | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}
