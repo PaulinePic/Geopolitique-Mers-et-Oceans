@@ -1,5 +1,5 @@
 ---
-title: 'Security in the Arctic Region : a geopolitical read of Regional Security Complexes'
+title: 'Security in the Arctic Region : a geopolitical read of Regional Security Complexes'
 date: '2017-01-01'
 authors:
 - Pauline Pic

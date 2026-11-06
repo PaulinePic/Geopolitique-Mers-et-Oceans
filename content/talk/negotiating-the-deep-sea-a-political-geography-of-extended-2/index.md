@@ -1,5 +1,5 @@
 ---
-title: 'Negotiating the deep-sea : A Political Geography of Extended Continental Shelf Claims, in the Arctic and beyond'
+title: 'Negotiating the deep-sea : A Political Geography of Extended Continental Shelf Claims, in the Arctic and beyond'
 date: '2024-04-03'
 authors:
 - Pauline Pic

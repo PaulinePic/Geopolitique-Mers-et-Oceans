@@ -1,5 +1,5 @@
 ---
-title: 'Représenter l''océan Arctique : du mythe du vide aux fantasmes contemporains'
+title: 'Représenter l''océan Arctique : du mythe du vide aux fantasmes contemporains'
 date: '2026-01-08'
 authors:
 - Pauline Pic

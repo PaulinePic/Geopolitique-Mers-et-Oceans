@@ -1,5 +1,5 @@
 ---
-title: 'The Polar Code and Canada’s Regulations on Arctic Navigation : shipping companies’ perceptions of the new legal environment'
+title: 'The Polar Code and Canada’s Regulations on Arctic Navigation : shipping companies’ perceptions of the new legal environment'
 date: '2021-01-01'
 authors:
 - Pauline Pic

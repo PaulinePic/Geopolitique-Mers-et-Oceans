@@ -2,7 +2,7 @@
 title: "Bio & C.V."
 ---
 
-<!-- [BROUILLON À RÉVISER] Le formulaire ne contenait pas de biographie longue. Le paragraphe ci-dessous est composé uniquement à partir des faits du C.V. ; remplacez-le par votre propre texte si vous le souhaitez. -->
+<!-- [BROUILLON À RÉVISER] Le formulaire ne contenait pas de biographie longue. Le paragraphe ci-dessous est composé uniquement à partir des faits du C.V. ; remplacez-le par votre propre texte si vous le souhaitez. -->
 
 Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géographie au lycée Stendhal de Grenoble en 2015-2016, avant de réaliser un doctorat en sciences géographiques à l’Université Laval (2016-2022), sous la direction de Frédéric Lasserre et de Stéphane Roussel. Sa thèse porte sur les échelles de la sécurité arctique. Elle est ensuite stagiaire postdoctorale à l’École supérieure d’études internationales de l’Université Laval (2022-2024), au sein de la chaire EPI dirigée par Jean-Frédéric Morin, où elle travaille sur les processus de gouvernance dans les Communs, et professionnelle de recherche à l’ENAP en 2023 sur les enjeux de gouvernance de l’océan Arctique central. Depuis 2026, elle est professeure à l’UQAR, où elle est titulaire d’une chaire de recherche en géopolitique des mers et océans.
 
@@ -14,7 +14,7 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
   <dt>2024–2025</dt>
   <dd><strong>Congé parental</strong></dd>
   <dt>2022–2024</dt>
-  <dd><strong>Stagiaire postdoctorale, Université Laval, Québec</strong><br><em>École supérieure d’études internationales</em><br>Projet de recherche sur les processus de gouvernance dans les Communs ; stage au sein de la chaire EPI, sous la direction de Jean-Frédéric Morin.</dd>
+  <dd><strong>Stagiaire postdoctorale, Université Laval, Québec</strong><br><em>École supérieure d’études internationales</em><br>Projet de recherche sur les processus de gouvernance dans les Communs ; stage au sein de la chaire EPI, sous la direction de Jean-Frédéric Morin.</dd>
   <dt>2023</dt>
   <dd><strong>Professionnelle de recherche, École nationale d’administration publique, Montréal</strong><br><em>Centre interuniversitaire de recherche sur les relations internationales du Canada et Québec</em><br>Projet de recherche sur les enjeux de gouvernance de l’océan Arctique central.</dd>
   <dt>2016–2022</dt>
@@ -33,7 +33,7 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
 
 <dl class="cv-list">
   <dt>2016–2022</dt>
-  <dd><strong>Doctorat en sciences géographiques</strong>, Université Laval (Québec, Canada)<br>Thèse : <em>« Une sécurité arctique? Analyse des échelles de la sécurité dans une région à géométrie variable. »</em><br>Direction : Frédéric Lasserre (Université Laval) et Stéphane Roussel (ENAP). Tableau d’honneur de la FESP.</dd>
+  <dd><strong>Doctorat en sciences géographiques</strong>, Université Laval (Québec, Canada)<br>Thèse : <em>« Une sécurité arctique? Analyse des échelles de la sécurité dans une région à géométrie variable. »</em><br>Direction : Frédéric Lasserre (Université Laval) et Stéphane Roussel (ENAP). Tableau d’honneur de la FESP.</dd>
   <dt>2015–2016</dt>
   <dd><strong>Diplôme universitaire (équivalent M2), Sciences de l’Éducation</strong>, Université Grenoble Alpes (Grenoble, France)</dd>
   <dt>2015</dt>
@@ -48,11 +48,11 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
 
 <dl class="cv-list">
   <dt>2026</dt>
-  <dd>« Transforming Climate Action – UQAR ». Chaire de recherche Géopolitique des mers et océans. Chercheuse principale (1 M CAD).</dd>
+  <dd>« Transforming Climate Action – UQAR ». Chaire de recherche Géopolitique des mers et océans. Chercheuse principale (1 M CAD).</dd>
   <dt>2025</dt>
-  <dd>Subventions de coopération ciblées MINDS. Projet : <em>Security, Environment, and Public Awareness: Engaging Canadians in the Grey Zone</em>. Co-chercheuse principale (47 500 CAD).</dd>
+  <dd>Subventions de coopération ciblées MINDS. Projet : <em>Security, Environment, and Public Awareness: Engaging Canadians in the Grey Zone</em>. Co-chercheuse principale (47 500 CAD).</dd>
   <dt>2023</dt>
-  <dd>Subventions de coopération ciblées MINDS. Projet : le développement de l’océan Arctique central. Co-chercheuse principale (27 500 CAD).</dd>
+  <dd>Subventions de coopération ciblées MINDS. Projet : le développement de l’océan Arctique central. Co-chercheuse principale (27 500 CAD).</dd>
   <dt>2022</dt>
   <dd>ESEI (Université Laval), bourse postdoctorale (100 000 CAD)</dd>
   <dt>2022</dt>

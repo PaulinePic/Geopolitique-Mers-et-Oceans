@@ -55,7 +55,7 @@ title: "Enseignement"
 
 <dl class="cv-list">
   <dt>2024-2025</dt>
-  <dd>Co-encadrement de Katérie Terrien Kennedy, maîtrise en Relations internationales (ESEI, Université Laval). Sujet : <em>Le leadership canadien en Arctique vis-à-vis les acteurs non-arctiques : le cas de la Chine.</em></dd>
+  <dd>Co-encadrement de Katérie Terrien Kennedy, maîtrise en Relations internationales (ESEI, Université Laval). Sujet : <em>Le leadership canadien en Arctique vis-à-vis les acteurs non-arctiques : le cas de la Chine.</em></dd>
 </dl>
 
-<!-- Le C.V. écrit « La leadership canadien en Arctique vis-à-vis les acteurs non-arctique » ; l'accord a été corrigé (« Le leadership … non-arctiques »). À confirmer avec l'intitulé officiel du mémoire. -->
+<!-- Le C.V. écrit « La leadership canadien en Arctique vis-à-vis les acteurs non-arctique » ; l'accord a été corrigé (« Le leadership … non-arctiques »). À confirmer avec l'intitulé officiel du mémoire. -->

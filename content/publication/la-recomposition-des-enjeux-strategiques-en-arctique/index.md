@@ -14,4 +14,4 @@ links:
   url: https://doi.org/10.3917/lcdm.030.0157
 ---
 
-<!-- Le C.V. indique 2019 devant le titre et 2017 après la pagination ; année à confirmer. -->
+<!-- Le C.V. indique 2019 devant le titre et 2017 après la pagination ; année à confirmer. -->

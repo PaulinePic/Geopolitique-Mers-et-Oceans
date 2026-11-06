@@ -8,7 +8,7 @@ authors:
 - Stéphane Roussel
 publication_types:
 - book
-publication: 'Québec : Presses de l’Université du Québec, 336 p. (sous la direction de)'
+publication: 'Québec : Presses de l’Université du Québec, 336 p. (sous la direction de)'
 tags:
 - Arctique
 - Sécurité

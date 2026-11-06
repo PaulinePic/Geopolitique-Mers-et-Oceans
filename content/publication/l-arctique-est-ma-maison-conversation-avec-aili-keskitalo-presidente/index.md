@@ -1,5 +1,5 @@
 ---
-title: 'L’Arctique est ma maison : conversation avec Aili Keskitalo, présidente du Parlement sami de Norvège'
+title: 'L’Arctique est ma maison : conversation avec Aili Keskitalo, présidente du Parlement sami de Norvège'
 date: '2019-05-08'
 authors:
 - Pauline Pic

@@ -6,7 +6,7 @@ authors:
 publication_types:
 - presentation
 talk_kind: invited
-event: 'Dix ans du Service européen pour l’action extérieure – L’UE : émergence d’un acteur global'
+event: 'Dix ans du Service européen pour l’action extérieure – L’UE : émergence d’un acteur global'
 location: Québec, Canada
 tags:
 - Arctique

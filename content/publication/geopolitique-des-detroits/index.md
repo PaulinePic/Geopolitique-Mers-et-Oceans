@@ -6,7 +6,7 @@ authors:
 - Pauline Pic
 publication_types:
 - book
-publication: 'Paris : Le Cavalier Bleu, 178 p.'
+publication: 'Paris : Le Cavalier Bleu, 178 p.'
 tags:
 - Détroits
 - Océans

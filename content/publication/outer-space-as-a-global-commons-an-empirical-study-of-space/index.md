@@ -1,5 +1,5 @@
 ---
-title: 'Outer Space as a Global Commons : An Empirical Study of Space Arrangements'
+title: 'Outer Space as a Global Commons : An Empirical Study of Space Arrangements'
 date: '2023-01-01'
 authors:
 - Pauline Pic

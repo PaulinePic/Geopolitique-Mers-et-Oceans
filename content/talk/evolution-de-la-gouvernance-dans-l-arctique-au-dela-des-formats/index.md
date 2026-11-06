@@ -1,5 +1,5 @@
 ---
-title: 'Évolution de la gouvernance dans l’Arctique : au-delà des formats traditionnels'
+title: 'Évolution de la gouvernance dans l’Arctique : au-delà des formats traditionnels'
 date: '2019-12-18'
 authors:
 - Pauline Pic

@@ -1,5 +1,5 @@
 ---
-title: 'Arctic routes opening up : strategies and perceptions of the bulk shipping industry'
+title: 'Arctic routes opening up : strategies and perceptions of the bulk shipping industry'
 date: '2016-01-01'
 authors:
 - Jean-François Doyon

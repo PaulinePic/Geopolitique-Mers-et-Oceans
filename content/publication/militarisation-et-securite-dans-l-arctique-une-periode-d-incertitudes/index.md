@@ -1,5 +1,5 @@
 ---
-title: 'Militarisation et sécurité dans l’Arctique : une période d’incertitudes'
+title: 'Militarisation et sécurité dans l’Arctique : une période d’incertitudes'
 date: '2025-01-01'
 authors:
 - Pauline Pic

@@ -7,7 +7,7 @@ authors:
 - Pauline Pic
 publication_types:
 - book_chapter
-publication: 'Dans P. Maurice (dir.), Encyclopedia of Water : Science, Technology, and Society'
+publication: 'Dans P. Maurice (dir.), Encyclopedia of Water : Science, Technology, and Society'
 tags:
 - Arctique
 - Navigation maritime

@@ -6,7 +6,7 @@ authors:
 - Frédéric Lasserre
 publication_types:
 - book_chapter
-publication: 'Dans J. Pawlak et J. Peter (dir.), From the North Atlantic to the South China Sea : Allied Maritime Strategy in the 21st century, ISPK Seapower series, vol. 4, Baden-Baden : Nomos, p. 197-208'
+publication: 'Dans J. Pawlak et J. Peter (dir.), From the North Atlantic to the South China Sea : Allied Maritime Strategy in the 21st century, ISPK Seapower series, vol. 4, Baden-Baden : Nomos, p. 197-208'
 tags:
 - Arctique
 - Sécurité

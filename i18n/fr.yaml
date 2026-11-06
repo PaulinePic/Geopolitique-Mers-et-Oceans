@@ -66,7 +66,7 @@
 - id: link_code
   translation: "Code source"
 
-# Étiquettes de type affichées entre crochets dans « Voir aussi »
+# Étiquettes de type affichées entre crochets dans « Voir aussi »
 - id: kind_paper
   translation: "Article"
 - id: kind_book

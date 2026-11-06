@@ -1,5 +1,5 @@
 ---
-title: 'Océans, cosmos, Antarctique : de nouveaux espaces de conquête?'
+title: 'Océans, cosmos, Antarctique : de nouveaux espaces de conquête?'
 date: '2020-01-01'
 authors:
 - Pauline Pic
@@ -15,4 +15,4 @@ links:
   url: https://doi.org/10.3917/ri.182.0135
 ---
 
-<!-- Le C.V. donne une adresse passant par le serveur de la bibliothèque de l’Université Laval ; l’adresse DOI directe a été utilisée. -->
+<!-- Le C.V. donne une adresse passant par le serveur de la bibliothèque de l’Université Laval ; l’adresse DOI directe a été utilisée. -->

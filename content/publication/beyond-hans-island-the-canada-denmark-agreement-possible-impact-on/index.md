@@ -1,5 +1,5 @@
 ---
-title: 'Beyond Hans Island : the Canada-Denmark agreement possible impact on mobility and continental shelves'
+title: 'Beyond Hans Island : the Canada-Denmark agreement possible impact on mobility and continental shelves'
 date: '2023-01-01'
 authors:
 - Mathieu Landriault
