@@ -9,6 +9,8 @@ title: "Médias"
 <dl class="cv-list">
   <dt>20 août 2026</dt>
   <dd><strong>Mediapart</strong>, par Fabien Escalona. <a href="https://www.mediapart.fr/journal/international/200826/la-liberte-de-navigation-est-censee-prevaloir-dans-les-detroits-internationaux" rel="noopener">«&nbsp;La liberté de navigation est censée prévaloir dans les détroits internationaux&nbsp;»</a></dd>
+  <dt>12 juin 2026</dt>
+  <dd><strong>RFI</strong>, <em>Éco d’ici, éco d’ailleurs</em>, émission de Bruno Faure. <a href="https://www.rfi.fr/fr/podcasts/%C3%A9co-d-ici-%C3%A9co-d-ailleurs/20260612-mondialisation-%C3%A0-qui-profite-la-fragmentation-de-l-%C3%A9conomie-mondiale" rel="noopener">«&nbsp;Mondialisation&nbsp;: qui profite de la fragmentation de l’économie mondiale&nbsp;?&nbsp;»</a></dd>
   <dt>11 mai 2026</dt>
   <dd><strong>Les Échos</strong> (article), par Jules Grandin. <a href="https://www.lesechos.fr/monde/enjeux-internationaux/ormuz-et-les-autres-ces-14-detroits-qui-verrouillent-le-commerce-mondial-2230937" rel="noopener">«&nbsp;Ormuz et les autres&nbsp;: ces 14 détroits qui verrouillent le commerce mondial&nbsp;»</a></dd>
   <dt>10 mai 2026</dt>
