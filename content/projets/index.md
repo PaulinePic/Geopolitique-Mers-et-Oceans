@@ -6,7 +6,7 @@ title: "Projets en cours"
 
 ## Géopolitique des données maritimes
 
-Analyse des conditions de production, d’accès et de circulation des données maritimes (satellitaires, océanographiques, issues de la navigation ou de la pêche) et des rapports de pouvoir qu’elles révèlent entre États, agences scientifiques, institutions de recherche et acteurs privés. Ce projet s’inscrit dans l’axe 3 du programme de la Chaire.
+Analyse des conditions de production, d’accès et de circulation des données maritimes (satellitaires, océanographiques, issues de la navigation ou de la pêche) et des rapports de pouvoir qu’elles révèlent entre États, agences scientifiques, institutions de recherche et acteurs privés. Ce projet s’inscrit dans l’axe 3 du programme de ma chaire de recherche.
 
 [Voir les publications associées](../publication/#all&area=geopolitique-donnees-maritimes)
 
