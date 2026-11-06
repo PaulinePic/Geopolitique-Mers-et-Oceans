@@ -17,16 +17,6 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
   <dd><strong>Stagiaire postdoctorale, Université Laval, Québec</strong><br><em>École supérieure d’études internationales</em><br>Projet de recherche sur les processus de gouvernance dans les Communs ; stage au sein de la chaire EPI, sous la direction de Jean-Frédéric Morin.</dd>
   <dt>2023</dt>
   <dd><strong>Professionnelle de recherche, École nationale d’administration publique, Montréal</strong><br><em>Centre interuniversitaire de recherche sur les relations internationales du Canada et Québec</em><br>Projet de recherche sur les enjeux de gouvernance de l’océan Arctique central.</dd>
-  <dt>2016–2022</dt>
-  <dd><strong>Assistante de recherche, Université Laval, Québec</strong><br><em>Département de Géographie</em>
-    <ul>
-      <li><em>Hiver 2022.</em> Projet de recherche sur les plateaux continentaux</li>
-      <li><em>Hiver et été 2018.</em> Projet de recherche sur l’application du code polaire et sa perception par les compagnies maritimes</li>
-      <li><em>Été 2017.</em> Projet de recherche sur le développement du tourisme au Nunavik</li>
-      <li><em>Hiver 2017.</em> Projet de recherche sur la sécurité arctique</li>
-    </ul></dd>
-  <dt>Été 2020</dt>
-  <dd><strong>Assistante de recherche, Université d’Ottawa, Ottawa</strong><br><em>Center for International Policy Studies</em><br>Projet de recherche sur les premières conséquences de la pandémie de Covid-19 dans l’Arctique.</dd>
 </dl>
 
 ## Formation
