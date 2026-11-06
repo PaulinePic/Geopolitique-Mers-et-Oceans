@@ -48,11 +48,11 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
 
 <dl class="cv-list">
   <dt>2026</dt>
-  <dd>« Transforming Climate Action – UQAR ». Chaire de recherche Géopolitique des mers et océans. Chercheuse principale (1 M CAD).</dd>
+  <dd>« Transforming Climate Action – UQAR ». Chaire de recherche Géopolitique des mers et océans. Chercheure principale (1 M CAD).</dd>
   <dt>2025</dt>
-  <dd>Subventions de coopération ciblées MINDS. Projet : <em>Security, Environment, and Public Awareness: Engaging Canadians in the Grey Zone</em>. Co-chercheuse principale (47 500 CAD).</dd>
+  <dd>Subventions de coopération ciblées MINDS. Projet : <em>Security, Environment, and Public Awareness: Engaging Canadians in the Grey Zone</em>. Co-chercheure principale (47 500 CAD).</dd>
   <dt>2023</dt>
-  <dd>Subventions de coopération ciblées MINDS. Projet : le développement de l’océan Arctique central. Co-chercheuse principale (27 500 CAD).</dd>
+  <dd>Subventions de coopération ciblées MINDS. Projet : le développement de l’océan Arctique central. Co-chercheure principale (27 500 CAD).</dd>
   <dt>2022</dt>
   <dd>ESEI (Université Laval), bourse postdoctorale (100 000 CAD)</dd>
   <dt>2022</dt>
@@ -83,7 +83,7 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
   <dt>Avr. 2019</dt>
   <dd><strong>Nord University, Norvège.</strong> PhD course, Arctic Governance</dd>
   <dt>Janv.–mars 2019</dt>
-  <dd><strong>UiT, Arctic University of Tromsø, Norvège.</strong> Chercheuse invitée</dd>
+  <dd><strong>UiT, Arctic University of Tromsø, Norvège.</strong> Stagiaire de recherche</dd>
   <dt>Janv. 2019</dt>
   <dd><strong>Arctic Frontiers, Norvège.</strong> Emerging Leaders workshop</dd>
   <dt>Janv. 2018</dt>
@@ -93,7 +93,7 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
 ## Affiliations professionnelles
 
 <dl class="cv-list">
-  <dt>Chercheuse associée</dt>
+  <dt>Chercheure associée</dt>
   <dd><strong>Comité national français des recherches arctiques et antarctiques</strong></dd>
   <dt>Fellow</dt>
   <dd><strong>North American and Arctic Defence Security Network</strong> (Trent University, ON)</dd>
@@ -101,7 +101,7 @@ Pauline Pic est agrégée de géographie (2015) et a enseigné l’histoire-géo
   <dd><strong>Réseau d’Analyse Stratégique</strong> (Kingston University, ON)</dd>
   <dt>2020 fellow</dt>
   <dd><strong>International Arctic Science Committee</strong> (Islande)</dd>
-  <dt>Chercheuse</dt>
+  <dt>Chercheure</dt>
   <dd><strong>Observatoire de la politique et de la sécurité de l’Arctique</strong> (ENAP, QC)</dd>
 </dl>
 
