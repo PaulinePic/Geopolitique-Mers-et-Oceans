@@ -2,7 +2,7 @@
 title: "Médias"
 ---
 
-<!-- [BROUILLON À RÉVISER] Les pages sources n'étaient pas accessibles lors de la rédaction : les titres ci-dessous sont déduits des adresses (URL) et doivent être vérifiés. Le titre de l'article des Échos est déduit de son adresse et reste à vérifier. -->
+<!-- [BROUILLON À RÉVISER] Titres et dates fournis par la titulaire. -->
 
 ## Citations et entrevues
 
@@ -10,7 +10,7 @@ title: "Médias"
   <dt>20 août 2026</dt>
   <dd><strong>Mediapart</strong>, par Fabien Escalona. <a href="https://www.mediapart.fr/journal/international/200826/la-liberte-de-navigation-est-censee-prevaloir-dans-les-detroits-internationaux" rel="noopener">«&nbsp;La liberté de navigation est censée prévaloir dans les détroits internationaux&nbsp;»</a></dd>
   <dt>11 mai 2026</dt>
-  <dd><strong>Les Échos</strong> (article), par Jules Grandin. <a href="https://www.lesechos.fr/monde/enjeux-internationaux/ormuz-et-les-autres-ces-14-detroits-qui-verrouillent-le-commerce-mondial-2230937" rel="noopener">«&nbsp;Ormuz et les autres, ces 14 détroits qui verrouillent le commerce mondial&nbsp;»</a></dd>
+  <dd><strong>Les Échos</strong> (article), par Jules Grandin. <a href="https://www.lesechos.fr/monde/enjeux-internationaux/ormuz-et-les-autres-ces-14-detroits-qui-verrouillent-le-commerce-mondial-2230937" rel="noopener">«&nbsp;Ormuz et les autres&nbsp;: ces 14 détroits qui verrouillent le commerce mondial&nbsp;»</a></dd>
   <dt>10 mai 2026</dt>
   <dd><strong>Les Échos</strong> (vidéo), réalisée par Jules Grandin. <a href="https://www.youtube.com/watch?v=0QbD5omWZs0&amp;list=PLMSqTg60yCbR3SR63lyqF4bOEtdAXfVMl&amp;index=7" rel="noopener">«&nbsp;Ces 14 points qui verrouillent le commerce mondial&nbsp;»</a></dd>
   <dt>7 mai 2026</dt>
