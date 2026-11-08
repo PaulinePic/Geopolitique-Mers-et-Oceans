@@ -1,5 +1,6 @@
 ---
 title: "Logiciels"
-sitemap:
-  disable: true
+build:
+  render: never
+  list: never
 ---
