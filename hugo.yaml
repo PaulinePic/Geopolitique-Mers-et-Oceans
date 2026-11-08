@@ -1,4 +1,4 @@
-baseURL: "https://paulinepic.github.io/Geopolitique-Mers-et-Oceans/" # MUST end with slash
+baseURL: "https://paulinepic.github.io/" # MUST end with slash
 title: "Pauline Pic"
 languageCode: fr-CA
 defaultContentLanguage: fr
