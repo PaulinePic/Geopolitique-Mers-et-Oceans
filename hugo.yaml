@@ -98,7 +98,7 @@ languages:
     languageName: English
     weight: 2
     params:
-      description: "Pauline Pic is a professor of geography at the Université du Québec à Rimouski (UQAR) and holds the Research Chair Transforming Climate Action in the Geopolitics of Seas and Oceans."
+      description: "Pauline Pic is a professor of geography at the Université du Québec à Rimouski (UQAR) and holds the Transforming Climate Action research chair in the Geopolitics of Seas and Oceans."
       owner:
         institution: "Université du Québec à Rimouski (UQAR)"
     menu:
