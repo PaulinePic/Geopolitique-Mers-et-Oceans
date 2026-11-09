@@ -36,7 +36,7 @@
         "year" $year
         "authors" ($p.Params.authors | default slice)
         "venue" ($p.Params.publication | default $p.Params.event | default "")
-        "location" ($p.Params.location | default "")
+        "location" (partial "place.html" ($p.Params.location | default ""))
         "abstract" ($p.Params.abstract | default "" | plainify | htmlUnescape)
         "types" $types
         "tabs" $tabIDs
@@ -81,7 +81,7 @@
         <label class="filter-label" for="f-area">{{ i18n "filter_area" }}</label>
         <select id="f-area" class="filter-select">
           <option value="">{{ i18n "filter_area_all" }}</option>
-          {{- range $areas }}<option value="{{ .slug }}">{{ .title }}</option>{{ end }}
+          {{- range $areas }}<option value="{{ .slug }}">{{ if eq site.Language.Lang "en" }}{{ .title_en | default .title }}{{ else }}{{ .title }}{{ end }}</option>{{ end }}
         </select>
       </div>
       <fieldset class="filter-block filter-block--types" id="f-types-block" hidden>

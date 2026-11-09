@@ -185,3 +185,8 @@
   translation: Session chairing and organization
 - id: talk_kind_poster
   translation: Refereed posters
+- id: home_title_suffix
+  translation: "Professor of Geography, UQAR"
+
+- id: bio_cv
+  translation: "Bio & CV"

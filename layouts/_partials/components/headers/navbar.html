@@ -16,6 +16,13 @@
     </nav>
 
     <div class="site-header__tools">
+      {{- $p := . -}}
+      {{- $href := "" -}}{{- $code := "" -}}{{- $name := "" -}}{{- $lang := "" -}}
+      {{- range site.Sites }}{{ if ne .Language.Lang site.Language.Lang }}{{ $href = .Home.RelPermalink }}{{ $code = .Language.Lang | upper }}{{ $name = .Language.LanguageName }}{{ $lang = .Language.LanguageCode }}{{ end }}{{ end -}}
+      {{- range $p.Translations }}{{ if ne .Language.Lang site.Language.Lang }}{{ $href = .RelPermalink }}{{ end }}{{ end -}}
+      {{- if $href }}
+      <a class="lang-switch" href="{{ $href }}" hreflang="{{ $lang }}" lang="{{ $lang }}" title="{{ $name }}" aria-label="{{ $name }}">{{ $code }}</a>
+      {{- end }}
       {{- if site.Params.header.navbar.show_search }}
       <button type="button" class="search-open" data-search-open aria-label="{{ i18n "search" }}" title="{{ i18n "search" }} (Ctrl&nbsp;K / ⌘&nbsp;K)">
         <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16.2" y2="16.2"></line></svg>

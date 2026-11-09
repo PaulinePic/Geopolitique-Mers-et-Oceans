@@ -7,7 +7,8 @@
         "Océans",
         "Navigation maritime"
       ],
-      "chair_axis": "axe-1"
+      "chair_axis": "axe-1",
+      "title_en": "Geography of seas and oceans"
     },
     {
       "slug": "geopolitique-arctique",
@@ -15,7 +16,8 @@
       "subcategories": [
         "Arctique"
       ],
-      "chair_axis": ""
+      "chair_axis": "",
+      "title_en": "Geopolitics of the Arctic"
     },
     {
       "slug": "gouvernance-communs",
@@ -24,7 +26,8 @@
         "Communs",
         "Espace extra-atmosphérique"
       ],
-      "chair_axis": ""
+      "chair_axis": "",
+      "title_en": "Governance of the Commons"
     },
     {
       "slug": "geopolitique-donnees-maritimes",
@@ -32,7 +35,8 @@
       "subcategories": [
         "Données maritimes"
       ],
-      "chair_axis": "axe-3"
+      "chair_axis": "axe-3",
+      "title_en": "Geopolitics of maritime data"
     }
   ]
 }

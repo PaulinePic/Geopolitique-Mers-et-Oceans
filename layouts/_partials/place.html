@@ -1,0 +1,5 @@
+{{- $s := . -}}
+{{- if eq site.Language.Lang "en" -}}
+  {{- range $fr, $en := site.Data.places_en -}}{{- $s = replace $s $fr $en -}}{{- end -}}
+{{- end -}}
+{{- $s -}}

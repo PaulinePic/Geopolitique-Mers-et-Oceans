@@ -1,13 +1,25 @@
 baseURL: "https://paulinepic.github.io/" # MUST end with slash
 title: "Pauline Pic"
-languageCode: fr-CA
 defaultContentLanguage: fr
+defaultContentLanguageInSubdir: false
 timeZone: America/Toronto
 enableRobotsTXT: true
 buildFuture: true # forthcoming works carry 2027 dates
 disableKinds: [taxonomy, term] # no auto-generated tag/author term pages
 
 module:
+  mounts:
+    - {source: archetypes, target: archetypes}
+    - {source: assets, target: assets}
+    - {source: data, target: data}
+    - {source: i18n, target: i18n}
+    - {source: layouts, target: layouts}
+    - {source: static, target: static}
+    - {source: content, target: content, lang: fr}
+    - {source: content-en, target: content, lang: en}
+    # Publications and talks are shared by both languages (their titles stay in the original language).
+    - {source: content/publication, target: content/publication, lang: en, excludeFiles: ["_index.md"]}
+    - {source: content/talk, target: content/talk, lang: en, excludeFiles: ["_index.md"]}
   imports:
     - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
 
@@ -20,10 +32,8 @@ markup:
       unsafe: true
 
 params:
-  description: "Pauline Pic, professeure de géographie à l'Université du Québec à Rimouski, titulaire de la Chaire de recherche Transformer l'action pour le climat en géopolitique des mers et des océans."
   owner:
     name: "Pauline Pic"
-    institution: "Université du Québec à Rimouski (UQAR)"
     email: "pauline_pic@uqar.ca"
   appearance:
     theme_day: custom
@@ -63,31 +73,41 @@ sitemap:
   changefreq: monthly
   priority: 0.5
 
-menu:
-  main:
-    - name: Bio & C.V.
-      pageRef: /bio
-      weight: 10
-    - name: Publications
-      pageRef: /publication
-      weight: 20
-    - name: Domaines de recherche
-      pageRef: /
-      params:
-        anchor: research-areas
-      weight: 30
-    - name: Projets en cours
-      pageRef: /projets
-      weight: 40
-    - name: Médias
-      pageRef: /medias
-      weight: 45
-    - name: Co-auteurs
-      pageRef: /authors
-      weight: 50
-    - name: Enseignement
-      pageRef: /teaching
-      weight: 60
-    - name: Contact
-      pageRef: /contact
-      weight: 70
+
+languages:
+  fr:
+    languageCode: fr-CA
+    languageName: Français
+    weight: 1
+    params:
+      description: "Pauline Pic, professeure de géographie à l'Université du Québec à Rimouski, titulaire de la Chaire de recherche Transformer l'action pour le climat en géopolitique des mers et des océans."
+      owner:
+        institution: "Université du Québec à Rimouski (UQAR)"
+    menu:
+      main:
+        - {name: "Bio & C.V.", pageRef: /bio, weight: 10}
+        - {name: "Publications", pageRef: /publication, weight: 20}
+        - {name: "Domaines de recherche", pageRef: /, weight: 30, params: {anchor: research-areas}}
+        - {name: "Projets en cours", pageRef: /projets, weight: 40}
+        - {name: "Médias", pageRef: /medias, weight: 45}
+        - {name: "Co-auteurs", pageRef: /authors, weight: 50}
+        - {name: "Enseignement", pageRef: /teaching, weight: 60}
+        - {name: "Contact", pageRef: /contact, weight: 70}
+  en:
+    languageCode: en-CA
+    languageName: English
+    weight: 2
+    params:
+      description: "Pauline Pic is a professor of geography at the Université du Québec à Rimouski (UQAR) and holds the Research Chair Transforming Climate Action in the Geopolitics of Seas and Oceans."
+      owner:
+        institution: "Université du Québec à Rimouski (UQAR)"
+    menu:
+      main:
+        - {name: "Bio & CV", pageRef: /bio, weight: 10}
+        - {name: "Publications", pageRef: /publication, weight: 20}
+        - {name: "Research areas", pageRef: /, weight: 30, params: {anchor: research-areas}}
+        - {name: "Current projects", pageRef: /projets, weight: 40}
+        - {name: "Media", pageRef: /medias, weight: 45}
+        - {name: "Co-authors", pageRef: /authors, weight: 50}
+        - {name: "Teaching", pageRef: /teaching, weight: 60}
+        - {name: "Contact", pageRef: /contact, weight: 70}

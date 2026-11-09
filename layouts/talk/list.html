@@ -18,7 +18,7 @@
           <span class="talk-item__date">{{ .Date | time.Format ":date_long" }}</span>
           <span class="talk-item__main">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>.
-            {{ .Params.event }}{{ with .Params.location }}, {{ . }}{{ end }}.
+            {{ .Params.event }}{{ with .Params.location }}, {{ partial "place.html" . }}{{ end }}.
             {{- $co := slice -}}
             {{- range .Params.authors }}{{ if ne . site.Title }}{{ $co = $co | append . }}{{ end }}{{ end -}}
             {{- with $co }} {{ i18n "with_coauthors" }} {{ delimit . ", " }}.{{ end }}

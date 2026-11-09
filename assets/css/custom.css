@@ -354,3 +354,13 @@ a:hover { color: var(--color-link-hover); }
   .site-header, .site-footer, .pub-sidebar, .pub-tabs-wrap, .search-dialog { display: none !important; }
   body { background: #fff; }
 }
+
+/* ---- language switch ---- */
+.lang-switch {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 2.4rem; height: 2.2rem; padding: 0 0.55rem;
+  border: 1px solid var(--color-border); border-radius: 999px;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--color-link); text-decoration: none; background: var(--color-surface);
+}
+.lang-switch:hover { color: var(--color-link-hover); border-color: var(--color-link-hover); }

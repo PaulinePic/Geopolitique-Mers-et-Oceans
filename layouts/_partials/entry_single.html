@@ -9,7 +9,7 @@
     {{- end }}
     <p class="entry__venue">
       {{- with $p.Params.publication }}<em>{{ . }}</em>{{ end -}}
-      {{- with $p.Params.event }}{{ . }}{{ with $p.Params.location }}, {{ . }}{{ end }}{{ end -}}
+      {{- with $p.Params.event }}{{ . }}{{ with $p.Params.location }}, {{ partial "place.html" . }}{{ end }}{{ end -}}
       {{- $when := "" -}}
       {{- if and (eq (int $p.Date.Month) 1) (eq $p.Date.Day 1) }}{{ $when = $p.Date.Format "2006" }}{{ else }}{{ $when = $p.Date | time.Format ":date_long" }}{{ end -}}
       {{- if or $p.Params.publication $p.Params.event }} · {{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $when }}</time>

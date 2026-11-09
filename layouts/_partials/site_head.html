@@ -14,10 +14,18 @@
   {{- else if .Params.subtitle }}{{ $desc = .Params.subtitle }}
   {{- else }}{{ $desc = site.Params.description }}{{ end }}
   {{- $title := site.Title -}}
-  {{- if .IsHome }}{{ $title = printf "%s | %s" site.Title "Professeure de géographie, UQAR" }}{{ else }}{{ $title = printf "%s | %s" .Title site.Title }}{{ end }}
+  {{- if .IsHome }}{{ $title = printf "%s | %s" site.Title (i18n "home_title_suffix") }}{{ else }}{{ $title = printf "%s | %s" .Title site.Title }}{{ end }}
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $desc | plainify | htmlUnescape | truncate 300 }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
+  {{- if .IsTranslated }}
+  {{- range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+  {{- if eq .Language.Lang "fr" }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+  {{- end }}
+  {{- end }}
+  {{- end }}
 
   <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />

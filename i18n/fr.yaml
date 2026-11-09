@@ -195,3 +195,8 @@
   translation: "Présidence et organisation de sessions"
 - id: talk_kind_poster
   translation: "Présentations par affiche avec arbitrage"
+- id: home_title_suffix
+  translation: "Professeure de géographie, UQAR"
+
+- id: bio_cv
+  translation: "Bio & C.V."

@@ -8,7 +8,7 @@
       {{- with .Params.institution }}<p class="hero__institution">{{ . }}</p>{{ end }}
       <div class="prose hero__intro">{{ .Content }}</div>
       <ul class="hero__actions">
-        <li><a class="btn" href="{{ "bio/" | relURL }}">Bio &amp; C.V.</a></li>
+        <li><a class="btn" href="{{ "bio/" | relURL }}">{{ i18n "bio_cv" }}</a></li>
         <li><a class="btn" href="{{ "publication/" | relURL }}">{{ i18n "writings" }}</a></li>
         <li><a class="btn" href="{{ "contact/" | relURL }}">Contact</a></li>
       </ul>
@@ -49,7 +49,7 @@
     {{- end -}}
     {{- $hits = first 5 (sort $hits "Date" "desc") -}}
     <details class="area" id="area-{{ .slug }}">
-      <summary class="area__summary">{{ .title }}</summary>
+      <summary class="area__summary">{{ if eq site.Language.Lang "en" }}{{ .title_en | default .title }}{{ else }}{{ .title }}{{ end }}</summary>
       <div class="area__body">
         {{- if $hits }}
         <ul class="area__list">
